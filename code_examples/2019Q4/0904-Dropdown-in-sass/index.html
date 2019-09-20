@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dropdown menus</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="dropdown">
+        <button type="button" class="dropdown__toggle">Menu</button>
+        <div class="dropdown__drawer">
+            <ul class="menu">
+                <li><a href="">Samba</a></li>
+                <li><a href="">Ricamole</a></li>
+                <li><a href="">Casandra</a></li>
+                <li><a href="">Balsamic</a></li>
+                <li><a href="">Fleurs</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            var toggle = document.querySelector('.dropdown__toggle');
+
+            toggle.addEventListener('click', (event) => {
+                event.target.parentNode.classList.toggle('is-open');
+            });
+        })()
+    </script>
+</body>
+</html>

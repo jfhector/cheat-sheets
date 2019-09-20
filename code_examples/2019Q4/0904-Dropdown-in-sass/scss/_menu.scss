@@ -1,0 +1,15 @@
+.menu {
+    list-style: none;
+    padding-left: 0;
+    border: 1px solid black;
+
+    > li > a {
+        padding: 0.8em;
+        display: block;
+        text-decoration: none;
+    }
+
+    > li + li > a {
+        border-top: 1px solid black;
+    }
+}

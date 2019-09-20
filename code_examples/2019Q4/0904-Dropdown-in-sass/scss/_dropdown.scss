@@ -1,0 +1,41 @@
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown__toggle {
+    min-width: 14em;
+    border: 1px solid black;
+    padding: 1em;
+    font-size: 1rem;
+
+    &::after {
+        content: '';
+        display: inline-block;
+        border: 4px solid;
+        border-color: black transparent transparent;
+        margin-left: 1em;
+
+        .dropdown.is-open > & {
+            border-color: transparent transparent black;
+        }
+    }
+}
+
+.dropdown__drawer {
+    display: none;
+    position: absolute;
+    top: 3.5em;
+    left: 0;
+    min-width: 100%; /* 1. */
+
+    .dropdown.is-open > & {
+        display: block;
+    }
+}
+
+/* 
+* 1. If I don't  set `mid-width: 100%, the menu is narrower than the toggle`.
+* I want to size them in relation to each other. But how?
+* Well, it's simple: they have a common parent (.dropdown), and it so happens that the width of the parent is set by the width of the toggle.
+*/
