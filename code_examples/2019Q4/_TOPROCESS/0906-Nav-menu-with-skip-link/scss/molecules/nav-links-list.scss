@@ -1,0 +1,70 @@
+ul.nav-links-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0;
+}
+
+ul.nav-links-list > li {
+    position: relative;
+    background-color: black;
+}
+
+ul.nav-links-list > li > a {
+    color: white;
+    display: block;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+button.primary-nav__menu-button[aria-expanded="false"] + ul.nav-links-list--primary {
+    display: none;
+}
+button.primary-nav__menu-button[aria-expanded="true"] + ul.nav-links-list--primary {
+    display: block;
+}
+@media screen and (min-width: 37.5rem) {
+    button.primary-nav__menu-button[aria-expanded] + ul.nav-links-list--primary {
+        display: flex;
+    }
+}
+
+ul.nav-links-list--primary > li {
+    border-bottom: 0.25rem solid #ddd;
+}
+@media screen and (min-width: 37.5rem) {
+    ul.nav-links-list--primary > li {
+        flex-grow: 1;
+    }
+}
+
+ul.nav-links-list--primary > li > a {
+    font-size: 1.4rem;
+}
+
+@media screen and (min-width: 37.5rem) {
+    ul.nav-links-list--secondary {
+        position: absolute;
+        top: 2.9rem;
+        min-width: 100%;
+        visibility: hidden;
+    }
+
+    li:focus-within > ul.nav-links-list--secondary,
+    li:hover > ul.nav-links-list--secondary {
+        visibility: visible;
+    }
+}
+
+ul.nav-links-list--secondary > li {
+    background-color: #444;
+}
+@media screen and (min-width: 37.5rem) {
+    ul.nav-links-list--secondary > li {
+        border-bottom: 0.125rem solid #ddd;
+    }
+}
+
+
+ul.nav-links-list--secondary > li > a {
+    font-size: 1.2rem;
+}

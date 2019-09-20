@@ -1,0 +1,27 @@
+ul.nav-links-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul.nav-links-list > li > a {
+  background-color: black;
+  color: white;
+  display: block;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+
+ul.nav-links-list--primary > li {
+  border-bottom: 0.125rem solid white;
+}
+
+ul.nav-links-list--primary > li > a {
+  font-size: 1.4rem;
+}
+
+ul.nav-links-list--secondary > li > a {
+  font-size: 1.2rem;
+  background-color: #333;
+}
+
+/*# sourceMappingURL=nav-links-list.css.map */

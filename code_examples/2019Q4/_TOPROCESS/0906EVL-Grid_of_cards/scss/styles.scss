@@ -1,0 +1,33 @@
+/* See bottom of the file for project-specific CSS code */
+
+@import '_normalize';
+@import '_defaults';
+@import '_variables';
+@import '_utilities';
+
+/*
+* Project global styles
+*/
+
+.grid {
+    display: grid;
+    padding: 1rem;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+}
+
+.card {
+    border: 1px solid black;
+    padding: 1rem;
+}
+
+.card__image {
+    border: 1px solid black;
+    padding: 1rem;
+}
+
+/*
+* Project module imports
+*/
+
+@import './atoms/layout-primitives';

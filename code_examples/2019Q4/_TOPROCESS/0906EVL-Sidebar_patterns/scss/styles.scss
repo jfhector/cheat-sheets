@@ -1,0 +1,85 @@
+/* See bottom of the file for project-specific CSS code */
+
+@import '_normalize';
+@import '_defaults';
+@import '_variables';
+@import '_utilities';
+
+/*
+* Project global styles
+*/
+
+
+/* Implementation where flex-basis causes the breaking into a new row */
+
+/* .with-sidebar {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+}
+
+.with-sidebar__sidebar {
+    background-color: aquamarine;
+    flex-basis: 20rem;
+    flex-grow: 1;
+}
+
+.with-sidebar__main-panel {
+    background-color: bisque;
+    flex-basis: 50%;
+    flex-grow: 999;
+} */
+
+/* Alternative implementation where min-width causes the breaking into a new row */
+
+/* .with-sidebar {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+}
+
+.with-sidebar__sidebar {
+    background-color: aquamarine;
+    flex-basis: 20rem;
+    flex-grow: 1;
+}
+
+.with-sidebar__main-panel {
+    background-color: bisque;
+    flex-basis: 0%;
+    flex-grow: 999;
+    min-width: 50%;
+} */
+
+/* Implementation with a gutter */
+
+.with-sidebar {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    margin: -0.5rem;
+}
+
+.with-sidebar__sidebar,
+.with-sidebar__main-panel {
+    margin: 0.5rem;
+}
+
+.with-sidebar__sidebar {
+    flex-basis: 20rem;
+    flex-grow: 1;
+    background-color: aquamarine;
+}
+
+.with-sidebar__main-panel {
+    flex-basis: calc(50% - 1rem);
+    flex-grow: 999;
+    margin: 0.5rem;
+    background-color: bisque;
+}
+
+/*
+* Project module imports
+*/
+
+@import './atoms/layout-primitives';

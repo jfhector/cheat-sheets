@@ -1,0 +1,32 @@
+/* See bottom of the file for project-specific CSS code */
+
+@import '_normalize';
+@import '_defaults';
+@import '_variables';
+@import '_utilities';
+
+/*
+* Project global styles
+*/
+
+a {
+    display: inline-block;
+    padding: 1rem;
+    border: 1px solid black;
+}
+
+.switcher-with-gutter {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -0.5rem;
+}
+
+.switcher-with-gutter > * {
+    margin: 0.5rem;
+    flex-grow: 1;
+    flex-basis: calc((42rem - (100% + 1rem)) * 999);
+}
+
+/*
+* Project module imports
+*/

@@ -1,0 +1,38 @@
+/* See bottom of the file for project-specific CSS code */
+
+@import '_normalize';
+@import '_defaults';
+@import '_variables';
+@import '_utilities';
+
+/*
+* Project global styles
+*/
+
+body {
+    padding: 1rem;
+}
+
+.frame {
+    padding-bottom: 56.25%;
+    position: relative;
+}
+
+.frame > img,
+.frame > video {
+    overflow: hidden;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+/*
+* Project module imports
+*/
+
+@import './atoms/layout-primitives';

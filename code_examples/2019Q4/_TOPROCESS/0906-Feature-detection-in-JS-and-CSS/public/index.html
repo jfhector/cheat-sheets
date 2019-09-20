@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <meta charset="utf-8">
+    <title>Boilerplate</title>
+    <link type="text/css" rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+
+    <div id="grid-test">Hello</div>
+
+    <div id="caca-test">Hello</div>
+
+    <script>
+        // Detecting a JS feature in JS
+        if ('ResizeObserver' in window) {
+            console.log("Resize observer available");
+        } else {
+            console.log("Resize observer not available");
+        }
+
+        // Detecting a CSS feature in JS
+        if (CSS.supports('display', 'grid')) {
+            console.log("CSS Grid available");
+        } else {
+            console.log("CSS Grid not available");
+        }
+
+        if (CSS.supports('display', 'caca')) {
+            console.log("Display caca available");
+        } else {
+            console.log("Display caca not available");
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+@import url(_normalize.css);
+@import url(_defaults.css);
+@import url(_variables.css);
+@import url(_utilities.css);
+
+/* Stack experiment */
+
+/* .stack {
+    border: 2px solid black;
+    padding: 1rem;
+}
+
+.stack > * + * {
+    margin-top: 1rem;
+}
+
+section {
+    padding: 1rem;
+    background-color: cadetblue;
+}
+
+.box {
+    background-color: red;
+    padding: 1rem;
+}
+
+.neg-margin {
+    margin: -8px;
+} */
+
+/* Cluster without third layer experiment */
+
+a {
+    padding: 1rem;
+    border: 1px solid black;
+}
+
+/*  */
+
+.box-without-margin {
+    padding: 1rem;
+    background-color: burlywood;
+}
+
+.cluster-without-3rd-layer {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -1rem;
+}
+
+.cluster-without-3rd-layer > * {
+    margin: 1rem;
+}
+
+/*  */
+
+.cluster-with-3rd-layer-without-block-formatting-context > * {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -1rem;
+}
+
+.cluster-with-3rd-layer-without-block-formatting-context > * > * {
+    margin: 1rem;
+}
+
+/*  */
+
+.cluster-with-3rd-layer-with-block-formatting-context {
+    overflow: hidden;
+}
+
+.cluster-with-3rd-layer-with-block-formatting-context > * {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -1rem;
+}
+
+.cluster-with-3rd-layer-with-block-formatting-context > * > * {
+    margin: 1rem;
+}
+
+/*  */
+
+.cluster-with-3rd-layer-without-block-formatting-context-with-compensating-margin {
+    margin: 1rem;
+}
+
+.cluster-with-3rd-layer-without-block-formatting-context-with-compensating-margin > * {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -1rem;
+}
+
+.cluster-with-3rd-layer-without-block-formatting-context-with-compensating-margin > * > * {
+    margin: 1rem;
+}

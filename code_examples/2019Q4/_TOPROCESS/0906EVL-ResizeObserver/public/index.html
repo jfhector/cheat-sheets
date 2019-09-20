@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <meta charset="utf-8">
+    <title>Resize observer</title>
+    <link type="text/css" rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+
+    <div class="container" id="container" data-threshold="20rem"></div>
+
+    <script>
+        if ('ResizeObserver' in window) {
+
+            function observeContainer(container) {
+            // Get the value from the `threshold` attribute
+            const threshold = container.dataset.threshold;
+
+            // Convert the threshold from whatever unit it's in, to pixels
+            const tempElement = document.createElement('div');
+            tempElement.style.width = threshold;
+            container.appendChild(tempElement);
+            const thresholdToPixels = tempElement.offsetWidth;
+
+            // Create the ResizeObserver instance, with the function that the resizeObserver should call when the element's dimensions change
+            const ro = new ResizeObserver(entries => {
+                entries.forEach((entry) => {
+                // Get the element's rectangle
+                    const cr = entry.contentRect;
+
+                // Compare the element's width to the threshold
+                    const elementIsWiderThanThreshold = cr.width > thresholdToPixels;
+
+                // Toggle the `isSmallerThanThreshold` class based on whether the width is below the threshold
+                    container.classList.toggle('isSmallerThanThreshold', !elementIsWiderThanThreshold);
+                });
+            });
+
+            // Get the Resize Observe to observe the container
+            ro.observe(container);
+
+
+            }   
+
+            // Get the ResizeObserver instance to observe the container
+            observeContainer(document.getElementById('container'));
+        }
+    </script>
+</body>
+</html>

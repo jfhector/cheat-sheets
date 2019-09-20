@@ -1,0 +1,70 @@
+/* See bottom of the file for project-specific CSS code */
+
+@import '_normalize';
+@import '_defaults';
+@import '_variables';
+@import '_utilities';
+
+/*
+* Project global styles
+*/
+
+/* Implementation with Flexbox */
+
+.cover {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 1rem;
+    border: 1px solid black;
+}
+
+.cover > * {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.cover > :first-child:not(.cover__center) {
+    margin-top: 0;
+}
+
+.cover > :last-child:not(.cover__center) {
+    margin-bottom: 0;
+}
+
+.cover__center {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/* Implementation without Flexbox */
+
+// .cover {
+//     min-height: 100vh;
+//     padding: 1rem;
+//     border: 1px solid black;
+// }
+
+// .cover > * {
+//     margin-top: 1rem;
+//     margin-bottom: 1rem;
+// }
+
+// .cover > :first-child:not(.cover__center) {
+//     margin-top: 0;
+// }
+
+// .cover > :last-child:not(.cover__center) {
+//     margin-bottom: 0;
+// }
+
+// .cover__center {
+//     margin-top: auto;
+//     margin-bottom: auto;
+// }
+
+/*
+* Project module imports
+*/
+
+@import './atoms/layout-primitives';

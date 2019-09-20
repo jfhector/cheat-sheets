@@ -1,0 +1,19 @@
+.skip-link {
+  display: block;
+  text-align: center;
+  background-color: white;
+  font-size: 1.4rem;
+  padding: 0.5rem;
+}
+
+.skip-link:not(:focus) {
+  overflow: hidden !important;
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  margin-top: 0 !important;
+  padding: 0 !important;
+  height: 1px;
+  width: 1px;
+}
+
+/*# sourceMappingURL=skip-link.css.map */

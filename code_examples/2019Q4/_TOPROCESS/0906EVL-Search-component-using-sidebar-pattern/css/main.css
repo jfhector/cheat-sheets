@@ -1,0 +1,24 @@
+@import url(_normalize.css);
+@import url(_defaults.css);
+@import url(_variables.css);
+@import url(_utilities.css);
+
+body {
+    margin: 2rem;
+}
+
+.search-component {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.search-component > input[type="search"] {
+    min-width: 0;
+    flex-basis: 50%;
+    flex-grow: 999;
+}
+
+.search-component > button[type="submit"] {
+    flex-grow: 1;
+    flex-basis: auto;
+}

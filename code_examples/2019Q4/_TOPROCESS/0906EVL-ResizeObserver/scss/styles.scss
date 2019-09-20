@@ -1,0 +1,27 @@
+/* See bottom of the file for project-specific CSS code */
+
+@import '_normalize';
+@import '_defaults';
+@import '_variables';
+@import '_utilities';
+
+/*
+* Project global styles
+*/
+
+.container {
+    max-width: 30rem;
+    margin: 0 auto;
+    background-color: bisque;
+    padding: 1rem;
+}
+
+.container.isSmallerThanThreshold {
+    background-color: red;
+}
+
+/*
+* Project module imports
+*/
+
+@import './atoms/layout-primitives';

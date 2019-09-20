@@ -1,0 +1,29 @@
+/* Box sizing */
+
+html {
+    box-sizing: border-box;
+}
+
+*, ::before, ::after {
+    box-sizing: inherit;
+}
+
+/* Typographic measure */
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+figcaption {
+  max-width: 60ch;
+}
+
+/* Line-height */
+
+body {
+    line-height: 1.4;
+}
