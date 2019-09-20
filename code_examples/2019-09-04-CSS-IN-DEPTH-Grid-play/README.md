@@ -1,6 +1,6 @@
-# 2019-09-04-CSS-IN-DEPTH-Grid play
+# 2019-09-04-CSS-IN-DEPTH-Grid-play
 
-[See it live](https://jfhector.github.io/cheat-sheets/code_examples/2019-09-04-CSS-IN-DEPTH-Grid play/)
+[See it live](https://jfhector.github.io/cheat-sheets/code_examples/2019-09-04-CSS-IN-DEPTH-Grid-play/)
 
 ## Snapshots
 
