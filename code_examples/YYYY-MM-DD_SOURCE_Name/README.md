@@ -6,17 +6,17 @@
 
 <figure>
   <figcaption>Snapshot of Switch component at large viewport</figcaption>
-  <img src="./snapshots/s1.png">
+  <img src="./snapshots/s01.png">
 </figure>
 
 <figure>
   <figcaption>Snapshot of Switch component at medium viewport</figcaption>
-  <img src="./snapshots/s2.png">
+  <img src="./snapshots/s02.png">
 </figure>
 
 <figure>
   <figcaption>Snapshot of Switch component at narrow viewport</figcaption>
-  <img src="./snapshots/s3.png">
+  <img src="./snapshots/s03.png">
 </figure>
 
 ## What does it demonstrate?

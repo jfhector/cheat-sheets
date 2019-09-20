@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Homemade drop down</title>
+    <style>
+        html {
+            box-sizing: border-box;
+            --z-index--drop-down: 100;
+            --z-index--modal--backdrop: 200;
+            --z-index--modal--content-container: 210;
+        }
+
+        *, ::before, ::after {
+            box-sizing: inherit;
+        }
+
+        body {
+            margin: 0;
+            background-color: #eee;
+            min-height: 200vh;
+        }
+
+        .modal {
+            display: none;
+        }
+
+        .modal--backdrop {
+            position: fixed;
+            z-index: var(--z-index--modal--backdrop);
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(100, 200, 200, 0.8);
+        }
+
+        .modal--content-container {
+            border: 1px solid black;
+            position: fixed;
+            z-index: var(--z-index--modal--content-container);
+            top: 10%;
+            right: 10%;
+            bottom: 10%;
+            left: 10%;
+            overflow: auto;
+            background-color: beige;
+        }
+
+        .drop-down {
+            position: relative;
+            z-index: var(--z-index--drop-down);
+            background-color: white;
+        }
+
+        .drop-down {
+            max-width: max-content;
+            padding: 1em;
+            padding-right: 2em;
+            border: 1px solid black;
+        }
+
+        .drop-down::after {
+            content: '';
+            border: 4px solid;
+            border-color: black transparent transparent transparent;
+            height: 0;
+            width: 0;
+            position: absolute;
+            right: 1em;
+            top: 1.5em;
+            transition: 100ms ease-in-out;
+        }
+
+        .drop-down:hover::after,
+        .drop-down:focus-within::after {
+            transform: rotate(0.5turn);
+            top: calc(1.5em - 4px);
+        }
+
+        .drop-down-options {
+            max-width: 20em;
+            position: absolute;
+            top: calc(3em + 2px);
+            left: -1px;
+            display: none;
+            min-width: calc(100% + 2px);
+            border: 1px black solid;
+            background-color: white;
+        }
+
+        .drop-down:hover > .drop-down-options,
+        .drop-down:focus-within > .drop-down-options {
+            display: block;
+        }
+
+        .drop-down-options > a {
+            display: block;
+            padding: 1em;
+        }
+    </style>
+  </head>
+
+  <body>
+    <button type="button" id="open-modal-button">
+        Open modal
+    </button>
+
+    <div id="modal" class="modal">
+        <div id="modal-backdrop" class="modal--backdrop"></div>
+        <div class="modal--content-container">
+            <button type="button" id="close-modal-button">Close modal</button>
+    
+            <h1>Modal title</h1>
+            
+            <p>Some modal content</p>
+            <p>Some modal content</p>
+        </div>
+    </div>
+
+    <nav class="drop-down" tabindex="0">
+            Main menu
+
+            <div class="drop-down-options">
+                <a href="">Submit</a>
+                <a href="">Abandon</a>
+                <a href="">Retaliate</a>
+                <a href="">Leave</a>
+                <a href="">Try again</a>
+            </div>    
+        </nav>
+  </body>
+
+  <script>
+      const openModalButton = document.getElementById('open-modal-button');
+      const modal = document.getElementById('modal');
+      const closeModalButton = document.getElementById('close-modal-button');
+      const modalBackdrop = document.getElementById('modal-backdrop');
+
+      openModalButton.addEventListener('click', () => {
+          modal.style.display = 'block';
+      });
+
+      closeModalButton.addEventListener('click', () => {
+        modal.style.display = 'none';
+      });
+
+      modalBackdrop.addEventListener('click', () => {
+        modal.style.display = 'none';
+      });
+  </script>
+</html>
