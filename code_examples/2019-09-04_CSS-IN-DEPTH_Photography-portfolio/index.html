@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Photography portfolio</title>
+    <style>
+        html {
+            box-sizing: border-box;
+        }
+
+        *, ::before, ::after {
+            box-sizing: inherit;
+        }
+
+        body {
+            margin: 0;
+            background-color: #eee;
+        }
+
+        figure {
+            margin: 0;
+        }
+
+        .portfolio {
+            max-width: 960px;
+            display: grid;
+            grid-auto-rows: 1fr;
+            grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
+            grid-gap: 1em;
+            grid-auto-flow: dense;
+        }
+
+        .portfolio > figure.featured {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .portfolio > figure {
+            /* display: flex;
+            flex-direction: column; */
+        }
+
+        .portfolio > figure > img {
+            max-width: 100%;
+            height: 100%;
+            /* flex: 1; */
+            object-fit: cover;
+        }
+
+    </style>
+  </head>  
+  <body>
+      <div class="portfolio">
+
+          <figure class="featured">
+              <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/201806/Monkey_0.jpeg"/>
+              <figcaption>Monkey</figcaption>
+          </figure>
+          
+          <figure>
+              <img src="https://images2.minutemediacdn.com/image/upload/c_crop,h_1681,w_3000,x_0,y_53/f_auto,q_auto,w_1100/v1554729236/shape/mentalfloss/79468-istock-486699420.jpg"/>
+              <figcaption>Eagle</figcaption>
+          </figure>
+          
+          <figure class="featured">
+              <img src="https://ae01.alicdn.com/kf/HLB1ci9fLNjaK1RjSZKzq6xVwXXa5/Furret-Plush-Doll-Soft-Toy-Stuffed-Animal-evolves-from-Sentret-19.jpg_q50.jpg"/>
+              <figcaption>Ferret</figcaption>
+          </figure>
+          
+          <figure>
+              <img src="https://process.images.nathab.com/A6dTpd53SmIg0pBfJJhgAz/resize=width:1224/quality=value:60/cache=expiry:31536000/compress/https://www.nathab.com/uploaded-files/carousels/HERO/Alaska-North/36-The-Great-Alaskan-Grizzly-Encounter.jpg"/>
+              <figcaption>Bear</figcaption>
+          </figure>
+
+      </div>
+  </body>
+</html>
