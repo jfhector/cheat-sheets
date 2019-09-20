@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <meta charset="utf-8">
+    <title>Boilerplate</title>
+    <link type="text/css" rel="stylesheet" href="./styles.css">
+    <script defer src="./script.js"></script>
+</head>
+
+<body>
+    <button aria-haspopup="true" aria-expanded="false" aria-controls="menu">
+        Difficulty level
+        <span aria-hidden="true">&#x25be;</span>
+    </button>
+
+    <div role="menu" id="menu" hidden>
+        <!-- 
+            This is not 'roving tabindex'. It's just focus anagement among menu options :
+            - on opening the menu, focus is moved to the currently selected option (as per aria-checked="true")
+            - when using the arrows on the options, the focus moves programmatically
+            Note: unline a radio group, is doesn't matter to move tabindex="0", because only the menu button needs to be in the tab order.
+            (Unless there is more inside the menu panel obviously, but that's a different pattern, and in that case radio buttons are probably best)
+        -->
+        <button role="menuitemradio" tabindex="-1" aria-checked="true">Easy</button>
+        <button role="menuitemradio" tabindex="-1">Medium</button>
+        <button role="menuitemradio" tabindex="-1">Hard</button>
+    </div>
+
+    <div role="alert" class="!visually-hidden"></div>
+</body>
+</html>

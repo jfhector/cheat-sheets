@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <meta charset="utf-8">
+    <title>Boilerplate</title>
+</head>
+
+<body>
+
+    <script>
+        const bodyElt = document.querySelector('body');
+
+        // Using .textContent to give an element some text content
+        
+        // const para = document.createElement('p');
+        // para.textContent = 'Paragragh text content';
+        // bodyElt.appendChild(para);
+
+        // Using document.createTextNode('bla bla') to create a text node
+
+        // const para = document.createElement('p');
+        // para.textContent = 'Paragragh text content';
+        // bodyElt.appendChild(para);
+
+        // const text = document.createTextNode('Text created as a text node');
+        // bodyElt.appendChild(text);
+
+        // Adding a text node to an element that already had text content
+        // => This just adds the text node next to the text node that was previously created by .textContent
+
+        // para.appendChild(text);
+
+        // Using .textContent on an element that already has a text node as a child
+        // => this _replaces_ the previous text node child
+
+        // const text = document.createTextNode('Text created as a text node');
+        // bodyElt.appendChild(text);
+
+        // bodyElt.textContent = 'Text via text content';
+
+        // Using .textContent on an element that already has another element as a child, that's not a text node
+        // => Replaces any content (not just text node) that was there before using .textContent
+
+        // const para = document.createElement('p');
+        // para.textContent = 'Paragragh text content';
+        // bodyElt.appendChild(para);
+        // debugger;
+        // bodyElt.textContent = 'Text via text content';
+
+    </script>
+</body>
+</html>

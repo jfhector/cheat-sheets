@@ -1,0 +1,43 @@
+/* See bottom of the file for project-specific CSS code */
+
+@import '_normalize';
+@import '_defaults';
+@import '_variables';
+@import '_utilities';
+
+/*
+* Project global styles
+*/
+
+
+body {
+    margin: 1rem;
+}
+
+/*
+Custom elements are inline by default
+*/
+
+toggle-section {
+    display: block; /* Note: Don't forget to set this!!! */
+}
+
+/*
+Only applies if script runs and `role="region"` is added
+*/
+
+toggle-section[role="region"] {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+toggle-section[role="region"] + toggle-section { /* only apply this style if role="region" has been succesfully added by the custom element */
+    border-top: 0;
+}
+
+
+/*
+* Project module imports
+*/
+
+@import './atoms/layout-primitives';

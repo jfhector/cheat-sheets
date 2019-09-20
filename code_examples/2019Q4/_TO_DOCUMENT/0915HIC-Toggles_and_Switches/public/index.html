@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <meta charset="utf-8">
+    <title>Toggles, radios and switches</title>
+    <link type="text/css" rel="stylesheet" href="./styles.css">
+    <script defer src="./script.js"></script>
+</head>
+
+<body>
+    <main>
+        <h1>Toggles, radios and switches</h1>
+    
+        <h2>Toggles</h2>
+
+        <input type="checkbox" id="notify-checkbox" checked>
+        <label for="notify-checkbox">Notify by email</label>
+
+        <h2>Radios</h2>
+
+        <fieldset>
+            <legend>Notify by email</legend>
+
+            <input type="radio" value="no" name="notify" id="notify-no-radio" checked>
+            <label for="notify-no-radio">No</label>
+
+            <input type="radio" value="yes" name="notify" id="notify-yes-radio">
+            <label for="notify-yes-radio">Yes</label>
+        </fieldset>
+
+        <h2>Toggle button</h2>
+
+        <button type="button" aria-pressed="false" id="toggle-button">
+            Notify by email
+        </button>
+
+        <h2>Toggle button with label change</h2>
+
+        <button class="play-pause-button" type="button" id="toggle-button-with-label-change">
+            Play
+        </button>
+
+        <h2>Toggle button with visual change and no visible label</h2>
+
+        <button class="play-pause-button" type="button" id="visual-play-pause-button" data-state="paused">
+            <div class="visual-play-pause-button__play">
+                <span aria-hidden="true">&#9654;</span>
+                <span class="!visually-hidden">Play</span>
+            </div>
+
+            <div class="visual-play-pause-button__pause">
+                <span aria-hidden="true">&#9612;&#9612;</span>
+                <span class="!visually-hidden">Pause</span>
+            </div>
+        </button>
+
+        <h2>Switch button (external labelling)</h2>
+
+        <h3>Notifications</h3>
+
+        <ul class="notification-options">
+            <li>
+                <span id="notify-by-email-span">Notify by email</span>
+                <button aria-labelledby="notify-by-email-span" name="notify-by-email" aria-checked="false" role="switch" data-module="switch-button" class="switch-button">
+                    <span>on</span>
+                    <span>off</span>
+                </button>
+            </li>
+
+            <li>
+                <span id="notify-by-phone-span">Notify by phone</span>
+                <button aria-labelledby="notify-by-phone-span" name="notify-by-phone" aria-checked="false" role="switch" data-module="switch-button" class="switch-button">
+                    <span>on</span>
+                    <span>off</span>
+                </button>
+            </li>
+
+            <li>
+                <span id="notify-by-pigeon-span">Notify by pigeon</span>
+                <button aria-labelledby="notify-by-pigeon-span" name="notify-by-pigeon" aria-checked="false" role="switch" data-module="switch-button" class="switch-button">
+                    <span>on</span>
+                    <span>off</span>
+                </button>
+            </li>
+
+            <li>
+                <span id="notify-by-smoke-signals-span">Notify by smoke signals</span>
+                <button aria-labelledby="notify-by-smoke-signals-span" name="notify-by-smoke-signals" aria-checked="false" role="switch" data-module="switch-button" class="switch-button">
+                    <span>on</span>
+                    <span>off</span>
+                </button>
+            </li>
+        </ul>
+    </main>
+</body>
+</html>

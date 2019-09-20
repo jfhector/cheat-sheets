@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <meta charset="utf-8">
+    <title>Tabbed interface</title>
+    <link type="text/css" rel="stylesheet" href="./styles.css">
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+    <h1>Tabbed interface</h1>
+
+    <div class="tab-interface" data-module="tab-interface">
+        <div class="tab-interface__toc-container">
+            <h2 id="toc-heading">Table of contents</h2>
+        
+            <ul aria-labelledby="toc-heading">
+                <li>
+                    <a href="#section-1-panel" id="section-1-tab">Section 1</a>
+                </li>
+                <li>
+                    <a href="#section-2-panel" id="section-2-tab">Section 2</a>
+                </li>
+                <li>
+                    <a href="#section-3-panel" id="section-3-tab">Section 3</a>
+                </li>
+                <li>
+                    <a href="#section-4-panel" id="section-4-tab">Section 4</a>
+                </li>
+            </ul>
+        </div>
+    
+        <section id="section-1-panel" aria-labelledby="section-1-tab">
+            <h2>Section 1</h2>
+            <p>Some content content content content content content content content content content content content content content contentcontent</p>
+            <p>Some content <a href="">content content</a> content content content content content content content content content content content contentcontent</p>
+        </section>
+    
+        <section id="section-2-panel" aria-labelledby="section-2-tab">
+            <h2>Section 2</h2>
+            <p>Some content content content content content content content content content content content content content content contentcontent</p>    
+            <p>Some content <a href="">content content</a> content content content content content content content content content content content contentcontent</p>
+        </section>
+    
+        <section id="section-3-panel" aria-labelledby="section-3-tab">
+            <h2>Section 3</h2>
+            <p>Some content content content content content content content content content content content content content content contentcontent</p>
+            <p>Some content <a href="">content content</a> content content content content content content content content content content content contentcontent</p>
+        </section>
+    
+        <section id="section-4-panel" aria-labelledby="section-4-tab">
+            <h2>Section 4</h2>
+            <p>Some content content content content content content content content content content content content content content contentcontent</p>
+            <p>Some content <a href="">content content</a> content content content content content content content content content content content contentcontent</p>
+        </section>
+    </div>
+</body>
+</html>

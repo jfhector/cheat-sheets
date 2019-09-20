@@ -1,0 +1,125 @@
+/* See bottom of the file for project-specific CSS code */
+
+@import '_normalize';
+@import '_defaults';
+@import '_variables';
+@import '_utilities';
+
+/*
+* Project global styles
+*/
+
+
+body {
+    padding: 1rem;
+}
+
+button {
+    appearance: none;
+    background-color: black;
+    color: white;
+    border-radius: 0.25em;
+    padding: 1em 1.5em;
+}
+
+[aria-pressed] {
+    position: relative;
+    top: -0.25rem;
+    left: -0.25rem;
+    box-shadow:
+        0.125em 0.125em #fff,
+        0.25em 0.25em #000;
+}
+
+[aria-pressed]:focus {
+    outline: 0.125rem solid transparent;
+    box-shadow: 0 0 0 0.25rem blue;
+}
+
+[aria-pressed="true"] {
+    top: 0;
+    left: 0;
+    box-shadow: 
+        inset 0 0 0 0.15rem #000,
+        inset 0.25em 0.25em #fff;
+}
+
+[aria-pressed="true"]:focus {
+    box-shadow:
+        0 0 0 0.25rem blue,
+        inset 0 0 0 0.15rem #000,
+        inset 0.25em 0.25em #fff;
+}
+
+@media (-ms-high-contrast: active) {
+    [aria-pressed="true"]::after {
+        content: "\02713";
+    }
+}
+
+.\!visually-hidden {
+    overflow: hidden !important;
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px) !important;
+    padding: 0 !important;
+    border: 0 !important;
+    height: 1px !important;
+    width: 1px !important;
+}
+
+.play-pause-button {
+    padding: 1rem;
+}
+
+ul.notification-options {
+    list-style: none;
+    padding-left: 0;
+    width: max-content;
+}
+
+ul.notification-options > li {
+    border-bottom: 1px solid black;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.switch-button {
+    margin-left: 1rem;
+    background-color: white;
+    border: 3px solid black;
+    padding: 0.125rem;
+    border-radius: 0.5rem;
+}
+
+.switch-button:focus {
+    outline: 0.125rem solid transparent;
+    box-shadow: 0 0 0 0.2rem blueviolet;
+}
+
+.switch-button > * {
+    display: inline-block;
+    background-color: white;
+    color: black;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    min-width: 3ch;
+}
+
+.switch-button[aria-checked="true"] > :first-child {
+    background-color: black;
+    color: white;
+}
+
+.switch-button[aria-checked="false"] > :last-child {
+    background-color: black;
+    color: white;
+}
+
+
+/*
+* Project module imports
+*/
+
+@import './atoms/layout-primitives';

@@ -1,0 +1,7 @@
+[role="menuitemradio"][aria-checked="true"]::before {
+    content: '\2713\0020';
+}
+
+[role="menuitemradio"][tabindex="-1"] {
+    outline: auto;
+}

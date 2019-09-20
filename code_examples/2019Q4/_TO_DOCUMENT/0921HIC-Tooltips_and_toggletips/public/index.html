@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <meta charset="utf-8">
+    <title>Tooltips and toggletips</title>
+    <link type="text/css" rel="stylesheet" href="./styles.css">
+    <script defer src="./script.js"></script>
+</head>
+
+<body>
+    <h1>Tooltips and toggletips</h1>
+
+    <h2>Label tooltip</h2>
+
+    <div data-module="label-tooltip">
+        <button aria-labelledby="badge label">
+            <img alt="" src="assets/bin-icon.svg">
+        </button>
+        
+        <span id="badge" aria-hidden="true">3</span>
+        <span id="label" role="tooltip">Deleted items</span>
+    </div>
+
+    <h2>Description tooltip</h2>
+
+    <div data-module="description-tooltip">
+        <button class="stack-0.5" aria-describedby="description" aria-labelledby="badge label">
+            <img alt="" src="assets/bin-icon.svg">
+            <span id="label">Deleted items</span>
+        </button>
+        
+        <span id="badge" aria-hidden="true">3</span>
+        <span id="description" role="tooltip">Click here to see your deleted items.</span>
+    </div>
+
+    <h2>Toggletip</h2>
+    <!-- PROBLEM IN THE PATTERN: People can't click on / select the message that gets displayed -->
+    
+    <div data-module="toggle-tip">
+        <button type="button" data-toggle-tip-content="Notifications will tell you about activity going on in the app, like receiving messages or likes">
+            <span aria-hidden="true">i</span>
+            <span class="!visually-hidden">More information</span>
+        </button>
+        
+        <span role="status"></span>
+    </div>
+</body>
+</html>
+
