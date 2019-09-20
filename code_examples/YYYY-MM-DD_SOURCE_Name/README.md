@@ -1,6 +1,6 @@
 # YYYY-MM-DD-SOURCE-Name
 
-[See it live](https://jfhector.github.io/cheat-sheets/code_examples/YYYY-MM-DD-SOURCE-Name/)
+[See it live](https://jfhector.github.io/cheat-sheets/code_examples/YYYY-MM-DD-SOURCE-Name/index.html)
 
 ## Snapshots
 
