@@ -6,12 +6,12 @@
 
 <figure>
   <figcaption>UI on large viewport</figcaption>
-  <img src="./snapshots/s1.png">
+  <img src="./snapshots/s01.png">
 </figure>
 
 <figure>
   <figcaption>UI on small viewport</figcaption>
-  <img src="./snapshots/s1.png">
+  <img src="./snapshots/s02.png">
 </figure>
 
 ## Notes
