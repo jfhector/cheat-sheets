@@ -14,7 +14,12 @@
   <img src="./snapshots/s02.png">
 </figure>
 
+## What does it demonstrate?
+
+* `grid-template-columns: minmax(10rem, 2fr) minmax(10rem, 1fr);`
+* `grid-column: 1 / 3; grid-row: span 2;`
+
 ## Notes
 
-<!-- * Abc
-* Abc -->
+* Abc
+* Abc
