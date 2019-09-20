@@ -4,7 +4,11 @@
 
 ## Snapshots
 
-* ![Snapshot of Switch component at large viewport](./snapshots/s1.png)
+<figure>
+  <img src="./snapshots/s1.png">
+  <figcaption>Snapshot of Switch component at large viewport</figcaption>
+</figure>
+
 * ![Snapshot of Switch component at medium viewport](./snapshots/s2.png)
 * ![Snapshot of Switch component at narrow viewport](./snapshots/s3.png)
 
