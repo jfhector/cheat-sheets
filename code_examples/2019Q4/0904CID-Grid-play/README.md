@@ -21,5 +21,4 @@
 
 ## Notes
 
-* Abc
-* Abc
+* Placeholder
