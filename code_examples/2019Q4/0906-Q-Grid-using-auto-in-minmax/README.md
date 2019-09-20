@@ -4,12 +4,10 @@
 
 ## Snapshots
 
-/*
 <figure>
   <figcaption>Layout</figcaption>
   <img src="./snapshots/s01.png">
 </figure>
-*/
 
 ## What does it demonstrate?
 
