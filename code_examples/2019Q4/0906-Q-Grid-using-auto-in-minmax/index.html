@@ -12,8 +12,6 @@
 
     <h2>Example with <pre><code></code>grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))</pre></h2>
 
-    <p>Produces overflow if the (intrinsic) width of any grid element is larger than 200px.</p>
-
     <div class="autofit-grid-with-auto-fit-min-200">
         <a href="">Bamboo</a>
         <a href="">Rackets</a>
@@ -21,12 +19,16 @@
         <a href="">Abc</a>
         <a href="">Def</a>
     </div>
+    
+    <p>The downside of using <pre><code>minmax(200px, ...)</code></pre> is that it produces overflow if the (intrinsic) width of any grid element is larger than 200px.</p>
+    
+    <p>Ideally, I'd like each grid element to be at least as wide as its content, automatically. This is easy with Flexbox but I'm not sure how to do this with CSS Grid.</p>
 
     <h2>Example with <pre><code></code>grid-template-columns: repeat(auto-fit, minmax(auto, 1fr))</pre></h2>
+    
+    <p>I thought that using <pre><code>minmax(auto, ...)</code></pre> would do the trick. But it doesn't seem to work:
 
     <p>Why is this not lining up boxes in a row?</p>
-
-    <p><code>auto</code> doesn't seem to be an accepted value for <code>minmax</code>... ? It's not used on the MDN page.</p>
 
     <div class="autofit-grid-with-auto-fit-min-auto">
         <a href="">Bamboo</a>
@@ -35,6 +37,8 @@
         <a href="">Abc</a>
         <a href="">Def</a>
     </div>
+    
+    <p>My hypothesis is that <code>auto</code> doesn't seem to be an accepted value for <code>minmax</code>... ? It's not used on the MDN page.</p>
 
 </body>
 </html>
