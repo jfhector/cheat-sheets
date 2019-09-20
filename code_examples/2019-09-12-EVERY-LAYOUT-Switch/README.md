@@ -5,18 +5,18 @@
 ## Snapshots
 
 <figure>
-  <img src="./snapshots/s1.png">
   <figcaption>Snapshot of Switch component at large viewport</figcaption>
+  <img src="./snapshots/s1.png">
 </figure>
 
 <figure>
-  <img src="./snapshots/s2.png">
   <figcaption>Snapshot of Switch component at medium viewport</figcaption>
+  <img src="./snapshots/s2.png">
 </figure>
 
 <figure>
-  <img src="./snapshots/s3.png">
   <figcaption>Snapshot of Switch component at narrow viewport</figcaption>
+  <img src="./snapshots/s3.png">
 </figure>
 
 ## Notes
