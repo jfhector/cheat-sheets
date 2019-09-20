@@ -1,6 +1,6 @@
-# 2019-09-05_CSS-IN-DEPTH_Modal-and-dropdown-positioning-and-z-index
+# 0905_CSS-IN-DEPTH_Modal-and-dropdown-positioning-and-z-index
 
-[See it live](https://jfhector.github.io/cheat-sheets/code_examples/2019-09-05_CSS-IN-DEPTH_Modal-and-dropdown-positioning-and-z-index/index.html)
+[See it live](https://jfhector.github.io/cheat-sheets/code_examples/0905_CSS-IN-DEPTH_Modal-and-dropdown-positioning-and-z-index/index.html)
 
 ## Snapshots
 
