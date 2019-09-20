@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <meta charset="utf-8">
+    <title>Boilerplate</title>
+    <link type="text/css" rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <h1>Grid (autofit, minmax, auto) vs Flexbox (grow, flex-basis comparison)</h1>
+
+    <h2>Grid (autofit, minmax, 200px)</h2>
+
+    <p>Produces overflow if the (intrinsic) width of any grid element is larger than 200px.</p>
+
+    <div class="autofit-grid-with-auto-fit-min-200">
+        <a href="">Bamboo</a>
+        <a href="">Rackets</a>
+        <a href="">Salamandarinocerosnakernelegant</a>
+        <a href="">Abc</a>
+        <a href="">Def</a>
+    </div>
+
+    <h2>Grid (autofit, minmax, auto)</h2>
+
+    <p>Why is this not lining up boxes in a row?</p>
+
+    <p><code>auto</code> doesn't seem to be an accepted value for <code>minmax</code>... ? It's not used on the MDN page.</p>
+
+    <div class="autofit-grid-with-auto-fit-min-auto">
+        <a href="">Bamboo</a>
+        <a href="">Rackets</a>
+        <a href="">Salamandarinocerosnakernelegant</a>
+        <a href="">Abc</a>
+        <a href="">Def</a>
+    </div>
+
+    <!-- <h2>Grid (autofit, minmax, auto), together with min-width on grid elements</h2>
+
+    <div class="autofit-grid-with-auto-fit-min-auto">
+        <a href="">Bamboo</a>
+        <a href="">Rackets</a>
+        <a href="min-with-applied">Salamandarinocerosnakernelegant</a>
+        <a href="">Abc</a>
+        <a href="">Def</a>
+    </div> -->
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+@import url(_normalize.css);
+@import url(_defaults.css);
+@import url(_variables.css);
+@import url(_utilities.css);
+
+a {
+    padding: 1rem;
+    border: 1px solid black;
+    display: inline-block;
+}
+
+.autofit-grid-with-auto-fit-min-200 {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.autofit-grid-with-auto-fit-min-auto {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(auto, 1fr));
+}
+
+.min-with-applied {
+    min-width: max-content;
+}
