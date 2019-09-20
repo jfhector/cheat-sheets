@@ -1,6 +1,6 @@
-# YYYY-MM-DD-SOURCE-Name
+# MMDDSRC-Name
 
-[See it live](https://jfhector.github.io/cheat-sheets/code_examples/YYYY-MM-DD-SOURCE-Name/index.html)
+[See it live](https://jfhector.github.io/cheat-sheets/code_examples/MMDDSRC-Name/index.html)
 
 ## Snapshots
 

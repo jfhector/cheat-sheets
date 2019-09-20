@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Button shakes if no keypress for 5 seconds</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Button shakes if no keypress for 5 seconds</h1>
+
+    <button type="button" id="button">Click me</button>
+
+    <script>
+        var button = document.getElementById('button');
+        var timeout = null;
+
+        document.documentElement.addEventListener('keyup', () => {
+            clearTimeout(timeout);
+
+            timeout = setTimeout(() => {
+                button.classList.add('shake');
+            }, 5000);
+        });
+
+        button.addEventListener('animationend', () => {
+            button.classList.remove('shake');
+        });
+    </script>
+</body>
+</html>

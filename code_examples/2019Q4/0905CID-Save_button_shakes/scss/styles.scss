@@ -1,0 +1,35 @@
+@import 'normalize';
+
+html {
+    box-sizing: border-box;
+}
+
+*, ::before, ::after {
+    box-sizing: inherit;
+}
+
+// Import my modules at the bottom of the file here
+
+button {
+    margin: 1em;
+}
+
+.shake {
+    animation-name: shake;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: none;
+    }
+
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateY(0.2em);
+    }
+
+    20%, 40%, 60%, 80% {
+        transform: translateY(-0.2em);
+    }
+}
