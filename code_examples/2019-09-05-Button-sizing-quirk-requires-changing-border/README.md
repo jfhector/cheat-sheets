@@ -1,6 +1,6 @@
 # 2019-09-05-Button-sizing-quirk-requires-changing-border
 
-[See it live](https://jfhector.github.io/cheat-sheets/code_examples/2019-09-05-Button-sizing-quirk-requires-changing-border/)
+[See it live](https://jfhector.github.io/cheat-sheets/code_examples/2019-09-05-Button-sizing-quirk-requires-changing-border/index.html)
 
 ## What does it demonstrate?
 

@@ -1,6 +1,6 @@
 # 2019-09-04_CSS-IN-DEPTH_Photography-portfolio
 
-[See it live](https://jfhector.github.io/cheat-sheets/code_examples/2019-09-04_CSS-IN-DEPTH_Photography-portfolio/)
+[See it live](https://jfhector.github.io/cheat-sheets/code_examples/2019-09-04_CSS-IN-DEPTH_Photography-portfolio/index.html)
 
 ## Snapshots
 
