@@ -1,4 +1,3 @@
-#Test repo
 
 ## Code examples
 
