@@ -4,9 +4,9 @@
 
 ## Snapshots
 
-![Snapshot of Switch component at large viewport](./snapshots/s1.png)
-![Snapshot of Switch component at medium viewport](./snapshots/s2.png)
-![Snapshot of Switch component at narrow viewport](./snapshots/s3.png)
+* ![Snapshot of Switch component at large viewport](./snapshots/s1.png)
+* ![Snapshot of Switch component at medium viewport](./snapshots/s2.png)
+* ![Snapshot of Switch component at narrow viewport](./snapshots/s3.png)
 
 ## Notes
 
