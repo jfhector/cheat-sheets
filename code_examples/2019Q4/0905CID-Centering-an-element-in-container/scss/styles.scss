@@ -1,0 +1,29 @@
+@import 'normalize';
+
+html {
+    box-sizing: border-box;
+}
+
+*, ::before, ::after {
+    box-sizing: inherit;
+}
+
+// Import my modules at the bottom of the file here
+
+.container {
+    width: 20em;
+    height: 20em;
+    position: relative;
+    background-color: blue;
+}
+
+.element {
+    width: 4em;
+    height: 4em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -2em;
+    margin-top: -2em;
+    background-color: red;
+}
