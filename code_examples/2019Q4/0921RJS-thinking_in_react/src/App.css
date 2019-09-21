@@ -1,0 +1,6 @@
+/* The `out-of-stock` class appears on `ProductTable`, not on `App` */
+/* Here we're learnt that rulesets from CSS modules apply downstream */
+
+.out-of-stock {
+    color: red;
+}
