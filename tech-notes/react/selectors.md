@@ -2,6 +2,72 @@
 
 (What I call) a selector function gives me a piece of state derived from one or several other piece(s) of state.
 
+## Deriving data from props and state using any custom logic
+
+I can use some logic to change props based on state.
+
+It doesn't have to be just 'pass a piece of state into this prop'. I can also have functions that, given an piece of state (argument), return different values for a prop – using whatever custom logic I want.
+
+For example, here the selected duration changes the data options available (i.e. different data options apply for different durations), and also changes the comparison options available (i.e. different comparison options apply for different durations).
+
+I can write 2 functions that take the duration state as arguments, and return values for date options and comparison options based on it.
+
+```js
+export function datesOptionsFor(selectedDuration: DurationOption): DateOptionsObject {
+    switch (selectedDuration) {
+        case '4 weeks': 
+            return dateOptionsFor4WeekDuration
+        case '12 weeks': 
+            return dateOptionsFor12WeekDuration
+        case '26 weeks': 
+            return dateOptionsFor26WeekDuration
+        case '52 weeks': 
+            return dateOptionsFor52WeekDuration
+        default:
+            const _exhaustiveCheck: never = selectedDuration
+            return _exhaustiveCheck
+    }
+}
+
+export function comparisonOptionsFor(selectedDuration: DurationOption): ComparisonOptionsObject {
+    switch (selectedDuration) {
+        case '52 weeks': 
+            return comparisonOptionsFor52WeekDuration
+        case '26 weeks': 
+            return comparisonOptionsFor26WeekDuration
+        case '12 weeks': 
+            return comparisonOptionsFor12WeekDuration
+        case '4 weeks': 
+            return comparisonOptionsFor4WeekDuration
+        default:
+            const _exhaustiveCheck: never = selectedDuration
+            return _exhaustiveCheck
+    }
+}
+```
+
+Then, I can call these functions to pass the right value to the selector prop, dynamically based on state:
+
+```js
+<Selector
+    optionsArray={Object.keys(datesOptionsFor(appState.selectedFilters.duration))}
+    value={appState.selectedFilters.dates}
+    handleSelectorChange={actions.changeSelected.dates}
+/>
+
+...
+	
+<Selector
+    optionsArray={Object.keys(comparisonOptionsFor(appState.selectedFilters.duration))}
+    value={appState.selectedFilters.comparison}
+    handleSelectorChange={actions.changeSelected.comparison}
+/>
+```
+
+![](./_assets/dynamicFilterDependencies.png)
+
+## Example of selectors
+
 ### Eg 1
 
 ```js

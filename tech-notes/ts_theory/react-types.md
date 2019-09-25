@@ -36,7 +36,7 @@ See [code example](./../../code_examples/2019Q4/0923rjs-forwarding-refs/README.m
 
 ### Mouse event handlers have a React.MouseEventHandler<HTMLElement> type
 
-```
+```js
 interface Props {
     // Instance-specific data extracted from appState upsteam
     expanded?: boolean

@@ -19,3 +19,23 @@ class Option extends React.Component<OptionProps, {}> {
     render() {
 ```
 
+## Passing down React nodes as props
+
+If I pass react nodes to a component, what I'm passing needs to be only _1_ node. So if I want to pass several, I can wrap them in a `div` or a react fragment `<>`.
+
+```js
+rightNode={
+    <> 
+        <span
+            className={s.measureInDetailBoardRightNodeLabel}
+        >
+            Selected measure:
+        </span>
+        <Selector
+            optionsArray={measureOptions}
+            value={`${selectedMeasure}`}
+            handleSelectorChange={changeSelectedMeasure}
+        />
+    </>
+}
+```
