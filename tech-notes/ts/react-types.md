@@ -31,3 +31,52 @@ export const FancyTextInput = React.forwardRef<HTMLInputElement, Props>(
     This is a simplified version of this https://medium.com/@martin_hotell/react-refs-with-typescript-a32d56c4d315
 
 See [code example](./../../code_examples/2019Q4/0923rjs-forwarding-refs/README.md).
+
+## Event handlers
+
+### Mouse event handlers have a React.MouseEventHandler<HTMLElement> type
+
+```
+interface Props {
+    // Instance-specific data extracted from appState upsteam
+    expanded?: boolean
+
+    // Instance-specific function extracted from actions upstream
+    handleClick?: React.MouseEventHandler<HTMLElement>
+}
+```
+
+### Keyboard events can be typed with KeyboardEvent
+
+```
+handleKeyDownEvent: (event: KeyboardEvent) => {
+    if (event.key !== 'Enter') { return }
+    if (this.state.viewTitleInputIsFocused !== true) { return }
+
+    // Blur the title input (this triggers the event listener on that element, which toggles the isFocused state)
+    this.refToViewTitleInput.blur()
+
+    // Assign the current selected filters to this.state.lastSavedFilters
+    this.setState({
+        previouslySavedFilters: this.state.selectedFilters,
+    })
+
+    // If viewTitle is '', reset it to the default
+    if (this.state.viewTitle === '') {
+        this.setState({
+            viewTitle: INITIAL_VIEW_TITLE
+        })
+    }
+},
+```
+
+## Children props (or anything renderable by React) can be typed with React.ReactNode
+
+If a prop can contain 'anything that can be rendered by React` (e.g. a children prop), the type of `React.ReactNode`
+
+```
+interface Props {
+    children: React.ReactNode
+    typeOption?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark'
+    dismissable?: boolean
+```
