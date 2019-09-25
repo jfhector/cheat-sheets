@@ -70,7 +70,7 @@ logIfHasName({neme: 'I just misspelled name to neme'}); // Error: object literal
 
 A type can include _an index signature_ to explicitely indicate that excess properties are permittted.
 
-```
+```js
 var x: { foo: number, [key: string]: any };
 x = { foo: 1, baz: 2 };  // Ok, `baz` matched by index signature
 ```

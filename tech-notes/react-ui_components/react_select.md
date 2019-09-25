@@ -37,7 +37,7 @@
             ...baseStyle,
             fontSize: 'small',
         }),
-    }}
+    }} />
 />
 ```
 

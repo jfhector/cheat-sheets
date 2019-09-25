@@ -80,3 +80,36 @@ interface Props {
     typeOption?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark'
     dismissable?: boolean
 ```
+
+## Default props: using type assertion to tip the compiler that a prop with a defaultProp will be non-null
+
+Eg
+```js
+type Props = {
+    title: string
+    children: React.ReactNode
+    headerIsSticky?: boolean
+    rightNode?: React.ReactNode
+    initiallyExpanded?: boolean
+}
+
+type State = {
+    headerHighlighted: boolean,
+    expanded: boolean,
+}
+
+export class CollapsibleContentBoard extends React.Component<Props, State> {
+    static defaultProps = {
+        initiallyExpanded: false,
+        rightNode: null,
+        headerIsSticky: false,
+    }
+
+    constructor(props: Props) {
+        super(props)
+        this.state = {
+            headerHighlighted: false,
+            expanded: props.initiallyExpanded as boolean
+        }
+    }
+```
