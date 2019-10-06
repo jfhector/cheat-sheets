@@ -5,7 +5,9 @@ In JS (and Python and Ruby), `&&` and `||` don't actually result in a `boolean` 
 They result in the value of one of their two operands. i.e. They select one of their two operands' value.
 
 * `a || b` is roughly equivalent to `a ? a : b`
-* `a && b` is roughly equivalent to `a? b: a`
+* `a && b` is roughly equivalent to `a ? b : a`
+
+
 
 ## `||`
 
@@ -33,16 +35,11 @@ foo("cool", ""); // "cool world"
 The first expression is a test that 'guards' the second expression:
 
 ```js
-function foo() {
-    console.log(a);
+function doSomething(opts) {
+    if (opts && opts.cool) {
+        // ...
+    }
 }
-
-var a = 42;
-
-a && foo(a);
 ```
 
-(This is a bad example because it still throws a `ReferenceError` if `a` is not defined).
-
-
-
+This is really helpful, because if `opts` is undefined, `opts.cool` would throw a `ReferenceError`. But with this guard, it won't even be evaluated.

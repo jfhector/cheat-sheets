@@ -358,10 +358,6 @@ Any value used in these contexts that is not already a boolean will be coerced t
 
 #### From array to string
 
-##### Explicitly
-
-TODO
-
 ##### Implicitly
 
 Arrays are coerced to strings, simply joining the values with commas in between.
@@ -440,11 +436,90 @@ var timestamp = +new Date; // But this is not good for readability
 
 If I make the comparison `'99' == 99`, '99' gets implicitly coerced into the number `99`, and then the comparison is made between `99` and `99`.
 
-#### When to use `==` vs `===`
+Both `==` and `===` behave identically in case two `object`s are being compared.
+
+#### Cases where it's safe and predictable to use `==`
+
+##### For comparing strings and numbers
+
+It's safe to use and works as expected.
+
+```js
+var a = 42;
+var b = '42';
+a === b; // false
+a == b; // true
+```
+
+##### For comparing `null`s to `undefined`s
+
+`null` and `undefined`, when compared with `==` loose equality, equate to (aka coerce to) each other, and to no other value (so no other value can give false positives here).
+
+So:
+* The coercion between `null` and `undefined` is safe and predictable
+* `null` and `undefined` can be treated as indistinguishable for the purpose of comparison with `==`
+
+It's recommended to use `==` to allow `undefined` and `null` to be treated as the same value:
+
+```js
+var a = doSomething();
+
+if (a == null) {
+    // ...
+}
+```
+
+In the example above, the test will pass only if `a` is `undefined` or `null`, and will fail if it is anything else, including falsy values such as `0`, `""` and `false`.
+
+##### Comparing `object`s to non-`object`s
+
+If an `object` / `function` / `array` (or anything else) is compared to boolean, the boolean is coerced to a number first.
+TOCHECK
+
+If an `object` / `function` / `array` is compared to a simple scalar primitive other than a boolean, the `object` / `function` / `array` is coerced to a primitive value first.
+
+```js
+var a = [42];
+var b = 42;
+a == b; // true
+```
+
+#### Cases where it's not safe or not predictable to use `==`
+
+##### For comparing anything to boolean (Gotcha!)
+
+Big gotcha: as per the specs, the first thing that happens is that the boolean is coerced to a number (`0` or `1`).
+
+So: 
+
+```js
+var a = 42;
+var b = true;
+a == b // false
+```
+
+This can be surprising, as one might expect that it's `42` that gets coerced first, as a `boolean` (i.e. `true`). But the specs say that when anything is compared to a boolean, the first thing that happens is that the boolean is coerced to a number.
+
+##### For comparing falsy values to each other (Gotchas!)
+
+Lots of gotchas here. But these pretty much the only surprising ones:
+
+```js
+"0" == false // true
+false == 0 // true
+false == "" // true
+false == [] // true
+"" == 0 // true
+"" == [] // true
+0 == [] // true
+```
+
+#### Summary: When to use `==` vs `===`
 
 * If either value could be `true` or `false`, avoid `==` and use `===` instead.
 * If either value could be `0`, `""` or `[]`, avoid `==` and use `===` instead.
 * If *all* other cases, I am safe to use `==` and it'll often simplify my code.
+  * For example, it's always safe with the `typeof` operator, because it always gives a string which can never be `""`
 
 ### Used on non-primitives (e.g. object, array, function, ...), `==` and `===` checks for identify of the references (it doesn't compare alues)
 
