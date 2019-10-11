@@ -1,5 +1,16 @@
 # Checkbox
 
+## Summary
+
+Functional, except for
+* discovering with a screen reader on hover or touch (on mobile)
+  * See Scott O'Hara below on how to solve this
+* Windows HCM
+
+## Master implementation
+
+Tbd
+
 ## From: 1011WTFF-Checkbox_Radio_Select_Progress
 
 See [example](./../../code_examples/2019Q4/1011WTFF-Checkbox_Radio_Select_Progress/README.md).
@@ -178,47 +189,11 @@ See [example](./../../code_examples/2019Q4/0925HP-Styling_radios/README.md).
 }
 ```
 
-## From 0925HP-Styling_radios
+## To look at: Scott O'Hara's
 
-See [example](./../../code_examples/2019Q4/0925HP-Styling_radios/README.md).
+[https://scottaohara.github.io/a11y_styled_form_controls/src/checkbox/](https://scottaohara.github.io/a11y_styled_form_controls/src/checkbox/)
 
-### Different way to style a radio box
+## Look at: Adrian Roselli's
 
-```css
-.radio,
-.checkbox {
-  position: absolute;
-  height: 1px;
-  width: 1px;
-  padding: 0px;
-  border: none;
-  overflow: hidden;
-  clip: rect(1px, 1px, 1px, 1px);
-}
+[https://adrianroselli.com/2017/05/under-engineered-custom-radio-buttons-and-checkboxen.html](https://adrianroselli.com/2017/05/under-engineered-custom-radio-buttons-and-checkboxen.html)
 
-.radio + span::before {
-  content: "";
-  width: 2rem;
-  height: 2rem;
-  border: 0.25rem solid white;
-  box-shadow: 0 0 0 0.15rem black;
-  margin-right: 0.75rem;
-  display: inline-block;
-  border-radius: 50%;
-  vertical-align: -0.65rem;
-  transition: all 150ms ease-in-out;
-}
-
-.radio:checked + span::before {
-  background-color: green;
-  box-shadow: 0 0 0 0.2rem black;
-}
-
-.radio:focus + span::before {
-  box-shadow: 0 0 0 0.15rem black, 0 0 0 0.25rem purple;
-}
-
-.radio:checked:focus + span::before {
-  box-shadow: 0 0 0 0.2rem black, 0 0 0 0.35 purple;
-}
-```
