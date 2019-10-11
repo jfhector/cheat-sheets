@@ -1,0 +1,54 @@
+.control {
+    position: relative;
+    padding-left: 1.5rem;
+    display: block;
+    cursor: pointer;
+}
+
+.control--inline {
+    display: inline-block;
+}
+
+.control > input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.control-indicator {
+    position: absolute;
+    top: 0.15rem;
+    left: 0;
+    width: 1rem;
+    height: 1rem;
+    line-height: 1rem;
+    // font-size: 65%;
+    // color: #eee;
+    // text-align: center;
+    background-color: #eee;
+    background-size: 50% 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    // States
+    .control:hover > & {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .control > input:focus ~ & {
+        box-shadow:
+            0 0 0 0.075rem #fff,
+            0 0 0 0.2rem #0074d9;
+    }
+
+    .control > input:checked ~ & {
+        color: #fff;
+        background-color: #0074d9;
+    }
+
+    .control > input:active ~ & {
+        color: #fff;
+        background-color: #84c6ff;
+    }
+}

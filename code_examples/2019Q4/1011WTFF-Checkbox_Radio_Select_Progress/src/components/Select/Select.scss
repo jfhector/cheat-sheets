@@ -1,0 +1,58 @@
+.Select {
+  position: relative;
+
+  &:after {
+    position: absolute;
+    top: 50%;
+    right: 1.25rem;
+    margin-top: -0.15rem;
+    // display: inline-block;
+    content: '';
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    border: 0.35rem solid transparent;
+    border-top-color: black;
+  }
+
+  select {
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+    padding: 0.5rem 2.25rem 0.5rem 1rem;
+    background-color: #eee;
+    border: 0;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    outline: 0;
+    appearance: none;
+
+    &:hover {
+      background-color: #ddd;
+    }
+
+    &:focus {
+      box-shadow:
+        0 0 0 0.075rem #fff,
+        0 0 0 0.2rem #0074d9;
+
+      &:-moz-focusring { /* Undo the Firefox inner focus ring */
+        color: transparent;
+        text-shadow: 0 0 0 #000;
+      }
+    }
+
+    &:active {
+      color: #fff;
+      background-color: #0074d9;
+    }
+
+    &::-ms-expand { /* Hide the arrow in IE10 and up */
+      display: none;
+    }
+  }
+}
+
+.Select--inline {
+  display: inline-block;
+}
