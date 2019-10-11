@@ -1,5 +1,17 @@
 # Radio button
 
+## Summary
+
+Functional, except for
+* discovering with a screen reader on hover or touch (on mobile)
+  * See Scott O'Hara below on how to solve this
+* Windows HCM
+* O'Hara's articles seem to suggest checkboxes and radios can be restyled pretty well (rather than being hidden, or re-implemented completely using ARIA)
+
+## Master implementation
+
+Tbd
+
 ## From: 1011WTFF-Checkbox_Radio_Select_Progress
 
 See [example](./../../code_examples/2019Q4/1011WTFF-Checkbox_Radio_Select_Progress/README.md).
