@@ -1,6 +1,6 @@
 # SCSS @extend
 
-## Whether to use `@extend` to remove a BEM-style modifier class assignment
+## When to use `@extend`, when when to use two class names
 
 See [example here](./../../../code_examples/2019Q4/1011WTFF-Checkbox_Radio_Select_Progress).
 
