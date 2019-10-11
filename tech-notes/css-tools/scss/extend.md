@@ -44,3 +44,15 @@ So instead, I do:
 
 In summary, I use `@extend` to avoid having to assign classes for (abstract) parents of the CSS component I want.
 But I don't use it for modifiers (I use two CSS classes instead).
+
+## Alternative: without SCSS, I wouldn't be creating an abstract `.control` class
+
+See [example](./../../../code_examples/2019Q4/0925HP-Styling_radios/README.md).
+
+When I want to DRY styles, instead of using an abstract parent class, I can just do this.
+
+```css
+.checkbox, .radio { /* put styles to re-use here */ } 
+.checkbox { /* ... */ } 
+.radio { /* ... */ }
+```
