@@ -6,7 +6,7 @@ Functional, except for
 * discovering with a screen reader on hover or touch (on mobile)
   * See Scott O'Hara below on how to solve this
 * Windows HCM
-* O'Hara's articles seem to suggest checkboxes and radios can be restyled pretty well (rather than being hidden, or re-implemented completely using ARIA)
+* O'Hara's articles seem to suggest checkboxes and radios can be restyled pretty well (rather than being hidden, or re-implemented completely using ARIA) (this is not the case for radios in IE 11, but otherwise it is)
 
 ## Master implementation
 
