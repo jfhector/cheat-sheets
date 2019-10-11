@@ -1,8 +1,10 @@
-### WTF Form implementation example
+# Checkbox
+
+## From: 1011WTFF-Checkbox_Radio_Select_Progress
 
 See [example](./../../code_examples/2019Q4/1011WTFF-Checkbox_Radio_Select_Progress/README.md).
 
-#### Consuming the Checkbox:
+### Consuming the Checkbox:
 
 ```tsx
 const [checkboxChecked, setCheckboxChecked] = useState(false);
@@ -15,7 +17,7 @@ const handleCheckboxChange = () => { setCheckboxChecked(!checkboxChecked); };
 </Checkbox>
 ```
 
-#### Defining the Checkbox:
+### Defining the Checkbox:
 
 ```ts
 type Props = {
