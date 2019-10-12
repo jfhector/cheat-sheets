@@ -1,5 +1,13 @@
 # Select
 
+## Summary
+
+Both WTF Forms' and Scott Ohara's implementations are good on the surface, and work in a similar way. I could re-use my WTF component as is. But if I have time it'd be good to implement Scott's and get into the details to see exactly what it adds.
+
+## Master implementation
+
+Scott O'Hara's
+
 ## From: 1011WTFF-Checkbox_Radio_Select_Progress
 
 See [example](./../../code_examples/2019Q4/1011WTFF-Checkbox_Radio_Select_Progress/README.md).
@@ -113,3 +121,7 @@ export const Select: React.FC<Props> = ({
   display: inline-block;
 }
 ```
+
+## To see: From Scott O'Hara
+
+https://scottaohara.github.io/a11y_styled_form_controls/src/select/

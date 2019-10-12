@@ -1,6 +1,29 @@
-# Progress
+# Progress and meter
 
-## From: 1011WTFF-Checkbox_Radio_Select_Progress
+## Summary
+
+* Don't confuse `progress` with `meter`, which would be more appropriate to report.
+
+### Progress
+
+* Screen readers don't support `progress` great. So it's better to treat it as decoration, and include visually hidden text with the same data.
+  * Question: what about discoverability by touch?
+
+### Meter
+
+* Screen reader support for `meter` is pretty bad. The recommendation is to not rely on it (i.e. to treat it as presentational and to include the same information as visually hidden text), or even to not use it at all.
+
+## Master implementation
+
+### Progress
+
+Either WTF Forms or Scott O'Hara's. As any implementation is somewhat not well supported by screen readers.
+
+### Meter
+
+Scott O'Hara's
+
+## Progress from: 1011WTFF-Checkbox_Radio_Select_Progress
 
 See [example](./../../code_examples/2019Q4/1011WTFF-Checkbox_Radio_Select_Progress/README.md).
 
@@ -75,3 +98,11 @@ export const Progress: React.FC<Props> = ({
   color: #0074d9;
 }
 ```
+
+## Progress: To see: Scott O'Hara's implemetation
+
+https://scottaohara.github.io/a11y_styled_form_controls/src/progress-bar/
+
+## Meter: To see: Scott O'Hara's implementation
+
+https://scottaohara.github.io/a11y_styled_form_controls/src/meter/

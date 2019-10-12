@@ -220,3 +220,7 @@ See [example](./../../code_examples/2019Q4/0925HP-Styling_radios/README.md).
 
 [https://adrianroselli.com/2017/05/under-engineered-custom-radio-buttons-and-checkboxen.html](https://adrianroselli.com/2017/05/under-engineered-custom-radio-buttons-and-checkboxen.html)
 
+## Variations
+
+* Scott O'Hara's Look [styled radio button pills](https://scottaohara.github.io/a11y_styled_form_controls/src/radio-button--pill/)
+* Heydon Pickering's in the Bulb Audit.
