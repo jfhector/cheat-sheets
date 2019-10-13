@@ -56,16 +56,16 @@
                     if (e.code === 'ArrowLeft' || e.code === 'ArrowRight') {
 
                         // Note: we are following the automatic selection pattern
-                        let tabToSelectNext;
+                        let $tabToSelectNext;
         
                         // if key code is ArrowLeft
                         if (e.code === 'ArrowLeft') {
                             // if tab is firstElementChild: nextSelectedTab is the last one
                             // if not, nextSelectedTab is the previous one
                             if (index === 0) {
-                                tabToSelectNext = tabs[(tabs.length - 1)];
+                                $tabToSelectNext = tabs[(tabs.length - 1)];
                             } else {
-                                tabToSelectNext = tabs[(index - 1)];
+                                $tabToSelectNext = tabs[(index - 1)];
                             }
                         }
         
@@ -74,13 +74,13 @@
                             // if tab if lastElementChild: nextSelectedTab is the first one
                             // if not, nextSelectedTab is the next one
                             if (index === (tabs.length - 1)) {
-                                tabToSelectNext = tabs[0];
+                                $tabToSelectNext = tabs[0];
                             } else {
-                                tabToSelectNext = tabs[(index + 1)];
+                                $tabToSelectNext = tabs[(index + 1)];
                             }
                         }
-                        if (tabToSelectNext) {
-                            selectTab(tabToSelectNext);
+                        if ($tabToSelectNext) {
+                            selectTab($tabToSelectNext);
                         }
 
                         // !!!! how to find an index from a NodeList using indexOf!!!!!!
