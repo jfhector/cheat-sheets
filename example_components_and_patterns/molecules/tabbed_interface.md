@@ -6,6 +6,24 @@
 
 [Heydon Pickering's, slightly modified in line with the W3C APGs](./../../code_examples/2019Q4/0920HIC-Tabbed_interfaces_modified_like_APG/README.md).
 
+Note that [Scott O'Hara's implementation](https://github.com/scottaohara/a11y_tab_widget) is probably more robust as a component (e.g. it doesn't rely on ids, and so you can have multiple instances on a page). I haven't implemented it myself yet.
+
+## Other examples
+
+### Scott O'Hara's manually activated tabs
+
+https://scottaohara.github.io/a11y_tab_widget/tests/manual.html
+
+"This is not necessarily preferred behavior of a Tab Widget, but there may be instances where it's required due to performance issues."
+
+### Scott O'Hara's vertical tabs
+
+https://scottaohara.github.io/a11y_tab_widget/tests/vertical-orientation.html
+
+### Scott O'Hara's multiple tab instances working on one page
+
+https://scottaohara.github.io/a11y_tab_widget/tests/multiple-instances.html
+
 ## Learning notes
 
 ### How to create a progressively enhanced tabbed interface, that is just a table of content is JS isn't available or if the viewport is narrow.
