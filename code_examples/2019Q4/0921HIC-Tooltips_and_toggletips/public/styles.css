@@ -436,7 +436,7 @@ img {
   position: absolute;
   min-width: max-content;
   top: 50%;
-  left: 4rem;
+  left: 4rem; /* I could also use something like `left: calc(100% + 1rem)` */
   transform: translateY(-50%);
   display: none;
 }
@@ -485,13 +485,15 @@ img {
   position: absolute;
   min-width: max-content;
   top: 50%;
-  left: 7rem;
+  /* left: 7rem; */
+  left: calc(100% + 1rem); /* I prefer this */
   transform: translateY(-50%);
   display: none;
 }
 
 [data-module=description-tooltip]:hover > [role=tooltip],
-[data-module=description-tooltip] > button:focus ~ [role=tooltip] {
+[data-module=description-tooltip] > button:focus ~ [role=tooltip],
+[data-module=description-tooltip] > input:focus ~ [role=tooltip] {
   display: block;
 }
 
