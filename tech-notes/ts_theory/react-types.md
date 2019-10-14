@@ -14,7 +14,19 @@ const [selectedLanguage, setLanguage] = useState<Language_Option | undefined>();
 
 ## Refs
 
-* When creating a ref for a Class Component instance, the type of the ref is `React.RefObject<MyComponent>`. See [Martin Hotell's article](https://medium.com/@martin_hotell/react-refs-with-typescript-a32d56c4d315) for more detail. See [code example](./../../code_examples/2019Q4/0923rjs-refs_for_DOM_elements_and_class_instances/README.md).
+### Using `createRef`
+
+When creating a ref for a Class Component instance, the type of the ref is `React.RefObject<MyComponent>`. See [Martin Hotell's article](https://medium.com/@martin_hotell/react-refs-with-typescript-a32d56c4d315) for more detail. See [code example](./../../code_examples/2019Q4/0923rjs-refs_for_DOM_elements_and_class_instances/README.md).
+
+### Typing React `useRef` hook
+
+See [example](./../../code_examples/2019Q4/1024-Modal_React_Component/README.md).
+
+`useRef` takes a generic type parameter to indicate the type of the element that will receive the reference
+
+```tsx
+const modalContentContainerRef = useRef<HTMLDivElement>(null);
+```
 
 ### Ref forwarding
 
@@ -58,9 +70,23 @@ interface Props {
 }
 ```
 
+#### Typing mouse event handlers in React, depending on whether I'm going to use them with `element.addEventListener` or as an `onClick` prop
+
+See [example](./../../code_examples/2019Q4/1024-Modal_React_Component/README.md).
+
+(Note: I didn't think of using `React.MouseEventHandler<HTMLElement>`. It might work better.)
+
+It seems like click handlers that will be passed as `onClick` props need to be typed `(e: React.MouseEvent) => void`.
+
+... but it seems like click handlers that will be used in `element.addEventListener('click', clickEventHander)` need to be typed `(e: MouseEvent) => void`.
+
+And the two aren't compatible. Which is a bit annoying as I've sometimes tried to use the same click event handler in both ways.
+
+More investigation needed.
+
 ### Keyboard events can be typed with KeyboardEvent
 
-```
+```tsx
 handleKeyDownEvent: (event: KeyboardEvent) => {
     if (event.key !== 'Enter') { return }
     if (this.state.viewTitleInputIsFocused !== true) { return }

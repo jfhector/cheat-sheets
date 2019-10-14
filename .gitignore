@@ -5,6 +5,9 @@
 
 # production
 
+# vs code stuff
+/.vscode
+
 # misc
 .DS_Store
 .env.local
