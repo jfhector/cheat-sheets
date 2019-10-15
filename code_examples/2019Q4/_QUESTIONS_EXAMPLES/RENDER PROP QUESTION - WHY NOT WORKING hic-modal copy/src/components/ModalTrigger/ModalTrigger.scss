@@ -1,0 +1,26 @@
+// Will use position: fixed
+// Will be positioned at the centre
+// Will have overflow: auto
+// Will have a max-height: 90vh;
+
+.Modal__backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.Modal__content_container {
+    position: fixed;
+    width: max-content;
+    max-width: 80%;
+    max-height: 60%;
+    overflow: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem;
+}
