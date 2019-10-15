@@ -4,7 +4,7 @@
 
 ### Using `inert`
 
-See [example](./../../code_examples/2019Q4/1024-Modal_React_Component/README.md).
+See [example](./../../code_examples/2019Q4/1014-Modal_React_Component/README.md).
 
 1. Add the [`inert` polyfill](https://github.com/GoogleChrome/inert-polyfill)
    * (See separate tech notes on polyfills)

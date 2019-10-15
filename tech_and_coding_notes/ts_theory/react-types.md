@@ -20,7 +20,7 @@ When creating a ref for a Class Component instance, the type of the ref is `Reac
 
 ### Typing React `useRef` hook
 
-See [example](./../../code_examples/2019Q4/1024-Modal_React_Component/README.md).
+See [example](./../../code_examples/2019Q4/1014-Modal_React_Component/README.md).
 
 `useRef` takes a generic type parameter to indicate the type of the element that will receive the reference
 
@@ -72,7 +72,7 @@ interface Props {
 
 #### Typing mouse event handlers in React, depending on whether I'm going to use them with `element.addEventListener` or as an `onClick` prop
 
-See [example](./../../code_examples/2019Q4/1024-Modal_React_Component/README.md).
+See [example](./../../code_examples/2019Q4/1014-Modal_React_Component/README.md).
 
 (Note: I didn't think of using `React.MouseEventHandler<HTMLElement>`. It might work better.)
 

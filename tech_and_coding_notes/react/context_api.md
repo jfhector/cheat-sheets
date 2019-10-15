@@ -2,12 +2,104 @@
 
 Using the Context API to avoid passing too many props through too many components
 
-## Use case 1: Avoid passing too many props to a custom component
+## Use case 1: Using the React Context API to share state and/or actions between a ancestor component and one or more of its descendant components
+
+See [example](./../../code_examples/2019Q4/1015TUI-Disclosure/README.md).
+
+
+1. import `React.createContext` and instanciate a context object in a separate file, so that I can import it across different components.
+   
+   `createContext` takes a generic type parameter corresponding to the type of the context value.
+
+<figure>
+  <figcaption>An example file structure, with the context instance being defined in a separate module:</figcaption>
+  <img src="./_assets/content_instance_in_separate_module.png">
+</figure>
+
+```ts
+import { createContext} from 'react';
+
+type ContextValue = {
+  expanded: boolean
+  toggleDisclosureVisibility: () => void
+}
+
+export const DisclosureContext = createContext<ContextValue>({
+  expanded: false,
+  toggleDisclosureVisibility: () => {},
+});
+```
+
+2. Define a component that will embed the context provider, providing the value passed through as context, and that the context consumers will be a descendant of.
+   
+  * To the `value` prop of the context provider, I need to pass the value that will be made available via the context consumer. Typically that `value` is a piece of state defined on that component, but we might want to also pass functions to update that state as part of the `value`.
+
+```tsx
+import React, { useState } from 'react';
+import { DisclosureContext } from './DisclosureContext';
+
+type Props = {
+  expandedByDefault?: boolean
+  children: React.ReactNode
+}
+
+export const Disclosure: React.FunctionComponent<Props> = ({
+  expandedByDefault = false,
+  children
+}) => {
+
+  const [expanded, setExpanded] = useState(expandedByDefault);
+
+  function toggleDisclosureVisibility() {
+    setExpanded(prevState => !prevState);
+  };
+
+  return (
+    <DisclosureContext.Provider value={{ expanded, toggleDisclosureVisibility }}>
+      {children}
+    </DisclosureContext.Provider>
+  );
+};
+
+export { DisclosureTrigger } from './DisclosureTrigger';
+export { DisclosureTarget } from './DisclosureTarget';
+```
+
+3. Embed the context consumer in the descendant components that need access to the context value. The context consumer children are a render prop, so a function that takes in the context value, and return a ReactNode.
+
+```jsx
+export const DisclosureTrigger: React.FunctionComponent<Props> = (props) => {
+
+  return (
+    <DisclosureContext.Consumer>
+      {
+        ({ expanded, toggleDisclosureVisibility }) => (
+          <button
+          type='button'
+          onClick={toggleDisclosureVisibility}
+          aria-expanded={expanded}
+          {... props}
+          >
+            { // Note: This way DisclosureTrigger accepts both some react content, or a function that returns some react content
+              typeof props.children === 'function' ?
+                (props.children as Function)(expanded) // TSC didn't automatically infer that props.children was a function
+                : props.children
+            }
+          </button>
+        )
+      }
+    </DisclosureContext.Consumer>
+  );
+}
+```
+
+
+## Use case 2: Avoid passing too many props to a custom component
 
 Eg. Sidebar and DataViewComponent get lots of props, and it's a component that's custom for this prototype.
 In this case, I could use the context API to give them access to all the state and actions it needs.
 
-From this:
+### From this:
 
 ```js
 <main

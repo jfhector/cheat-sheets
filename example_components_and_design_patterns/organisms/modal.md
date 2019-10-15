@@ -4,7 +4,7 @@
 
 ## Master implementation
 
-My [Modal component](./../../code_examples/2019Q4/1024-Modal_React_Component/README.md).
+My [Modal component](./../../code_examples/2019Q4/1014-Modal_React_Component/README.md).
 
 A robust modal component.
 
@@ -44,7 +44,7 @@ In this implementation, the dialog's `h1` and close button are provided by the D
 
 ### Using the `Modal` component
 
-See [example](./../../code_examples/2019Q4/1024-Modal_React_Component/README.md).
+See [example](./../../code_examples/2019Q4/1014-Modal_React_Component/README.md).
 
 1. The Modal component is stateless. The `modalVisible` state, and the event listeners and handlers, are in the component/page that uses the Modal instance.
    * This is because the button triggering the display of the Modal instance is on that page, so the click event can't be handled downstream.
@@ -132,7 +132,7 @@ export const PageWithAModalButton: React.FC = () => {
 
 ### Creating a Modal component in React
 
-See [example](./../../code_examples/2019Q4/1024-Modal_React_Component/README.md).
+See [example](./../../code_examples/2019Q4/1014-Modal_React_Component/README.md).
 
 ```tsx
 type Props = {

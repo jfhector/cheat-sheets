@@ -4,7 +4,7 @@
 
 ### Detecting `click` events outside an element, and using this to dismiss a dialog
 
-See [example](./../../code_examples/2019Q4/1024-Modal_React_Component/README.md).
+See [example](./../../code_examples/2019Q4/1014-Modal_React_Component/README.md).
 
 This could be in a component that consumes a Modal component:
 

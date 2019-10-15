@@ -1,4 +1,4 @@
-# 1024-Modal_React_Component
+# 1014-Modal_React_Component
 
 [See it live](https://oct24modalreactcomponent.now.sh)
 

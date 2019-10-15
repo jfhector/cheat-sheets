@@ -4,7 +4,7 @@
 
 ### Using React Portals
 
-See [example](./../../code_examples/2019Q4/1024-Modal_React_Component/README.md).
+See [example](./../../code_examples/2019Q4/1014-Modal_React_Component/README.md).
 
 1. create a `div` to serve as the portal target (all the modal elements will be rendered inside it)
 
