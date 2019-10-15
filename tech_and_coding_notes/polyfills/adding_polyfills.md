@@ -1,6 +1,6 @@
-# Polyfills
+# Adding polyfills
 
-## Installing polyfills in React
+## Adding polyfills in React
 
 ### Method 1: npm installing the polyfill, and importing it in `index.js`
 

@@ -4,6 +4,18 @@
 
 1.43 KB (instead of 6kb for react-modal).
 
+A robust modal component.
+
+The state management is not contained. The state and its management need to happen on the component that uses the Modal instance. This is also how others (Abramov) implement modals using Portals.
+
+The modal follows the APG guidelines, except that it doesn't place the focus automatically on the dialog's close button. (To see an example of this this pattern, look at the APG example of `a11y-dialog`).
+
+The `aria-role` is dialog. I could do a version that lets authors configure this to `alert-dialog`. Here's how that pattern works (note: clicking on the overlay doesn't close the dialog): https://github.com/HugoGiraudel/react-a11y-dialog/blob/master/index.js
+
+The `aria-role` is dialog. I could do a version that lets consumers configure this to `alert-dialog`.
+
+My implementation has TypeScript typechecking, but not PropTypes.
+
 ## Snapshots
 
 <figure>

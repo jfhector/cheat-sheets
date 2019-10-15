@@ -58,7 +58,8 @@ class TextInputWithFocusButton extends React.Component<{}, {}> {
 
 See [code example](./../../code_examples/2019Q4/0923rjs-forwarding-refs/README.md).
 
-## Using callbacks to assign refs
+
+## Using callbacks to assign refs
 
 ### Where ref assignment functions are defined and stored
 
@@ -119,7 +120,7 @@ Using the ref assignment function:
     />
 ```
 
-### Passing down ref assignment functions (which, because they are defined on the same component as the ref, capture the property on which the ref will be stored)
+****### Passing down ref assignment functions (which, because they are defined on the same component as the ref, capture the property on which the ref will be stored)
 
 __Don't transport refs. Only pass down ref assignment functions from the component on which the ref it is defined, to the instance of the component that needs can make the assignment, by passing down `refAssignmentFunctions` as a prop.__
 
@@ -178,3 +179,62 @@ Note the type of a ref assignment function: `(element: HTMLElement) => Void` or 
 
 Note the type of a ref assignment function: `(element: HTMLElement) => Void` or ideally more specialised so I make sure I use the ref in the right way
 (eg `(element: HTMLDivElement) => void`)
+
+### When using ref assignment functions, I can assign a ref programatically (not just using `ref={}`). And I can use ref assignment functions to assign JS objects (not just a DOM nodes)
+
+```jsx
+
+class Dialog extends React.Component {
+  ...
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.container !== this.state.container && this.state.container) {
+      this.dialog = this.dialog || this.initDialog()
+      this.props.dialogRef(this.dialog) /* <= */
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.dialog) {
+      this.dialog.destroy()
+    }
+
+    this.props.dialogRef(undefined) /* <= */
+  }
+
+  ...
+}
+
+Dialog.propTypes = {
+  ...
+  // A function called when the component has mounted, receiving the instance
+  // of A11yDialog so that it can be programmatically accessed later on.
+  // E.g.: dialogRef={(dialog) => (this.dialog = dialog)}
+  dialogRef: PropTypes.func,
+  ...
+}
+```
+
+See how the function passed as the `dialogRef` prop is used to get a reference to the JS object instance of `a11y-dialog` from inside the `Dialog` component, and assign it to `this.dialog` on the consuming React parent component.
+
+```jsx
+  render () {
+    return (
+      <div>
+        <button type="button" onClick={this.handleClick}>
+          Open the dialog
+        </button>
+
+        <Dialog id="my-accessible-dialog"
+                appRoot="#main"
+                dialogRoot="#dialog-root"
+                dialogRef={(dialog) => (this.dialog = dialog)}
+                title="The dialog title">
+          <p>Some content for the dialog.</p>
+        </Dialog>
+      </div>
+    )
+  }
+```
+
+https://github.com/HugoGiraudel/react-a11y-dialog/blob/master/index.js

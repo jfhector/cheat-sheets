@@ -2,16 +2,45 @@
 
 ## Summary
 
-A robust modal component.
-
-The state management is not contained. The state and its management need to happen on the component that uses the Modal instance. This is also how others (Abramov) implement modals using Portals.
-
 ## Master implementation
 
 My [Modal component](./../../code_examples/2019Q4/1024-Modal_React_Component/README.md).
 
-Other implementations:
-* Scott O'Hara's
+A robust modal component.
+
+The state management is not contained. The state and its management need to happen on the component that uses the Modal instance. This is also how others (Abramov) implement modals using Portals.
+
+The modal follows the APG guidelines, except that it doesn't place the focus automatically on the dialog's close button. (To see an example of this this pattern, look at the APG example of `a11y-dialog`).
+
+Doesn't use the `dialog` HTML element (as per Heydon Pickering's implementation), due to lack of support (I believe).
+
+The `aria-role` is dialog. I could do a version that lets authors configure this to `alert-dialog`. Here's how that pattern works (note: clicking on the overlay doesn't close the dialog): https://github.com/HugoGiraudel/react-a11y-dialog/blob/master/index.js
+
+Doesn't currently let authors configure styles. Here's a good example of how to do it: https://github.com/HugoGiraudel/react-a11y-dialog/blob/master/index.js
+
+My implementation doesn't require authors to manually create a dialog root in the HTML template. Instead, it will automatically append an element to `document.body`. Here's an implementation that requires an existing modal root in the DOM: https://github.com/HugoGiraudel/react-a11y-dialog/blob/master/index.js
+
+My implementation has TypeScript typechecking, but not PropTypes.
+
+### Other implementations:
+
+#### Scott O'Hara's
+
+#### a11y-dialog
+
+https://github.com/edenspiekermann/a11y-dialog
+
+#### Hugo Giraudel's React A11y Dialog
+
+https://github.com/HugoGiraudel/react-a11y-dialog
+
+Here's a good example of how to let authors configure styles: https://github.com/HugoGiraudel/react-a11y-dialog/blob/master/index.js
+
+This implementation requires an existing modal root in the DOM: https://github.com/HugoGiraudel/react-a11y-dialog/blob/master/index.js
+
+Shows how the `alert-dialog` pattern works (note: clicking on the overlay doesn't close the dialog): https://github.com/HugoGiraudel/react-a11y-dialog/blob/master/index.js
+
+In this implementation, the dialog's `h1` and close button are provided by the Dialog instance (rather than by passed to it as children).
 
 ### Using the `Modal` component
 
