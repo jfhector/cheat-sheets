@@ -1,0 +1,1 @@
+[See note in html folder](./../html/img_element_with_svg_source.md)

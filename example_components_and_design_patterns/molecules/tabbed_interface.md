@@ -10,6 +10,10 @@ Note that [Scott O'Hara's implementation](https://github.com/scottaohara/a11y_ta
 
 ## Other examples
 
+### TenonUI Tabs
+
+https://www.tenon-ui.info/tabs
+
 ### Scott O'Hara's manually activated tabs
 
 https://scottaohara.github.io/a11y_tab_widget/tests/manual.html
