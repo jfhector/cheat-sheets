@@ -109,3 +109,7 @@ export const SpinnerButton: React.FunctionComponent<Props> = ({
   );
 };
 ```
+
+## Choosing between `'assertive'` and `'polite'` for `aria-live`
+
+An assertive message (aria-live="assertive") is usually appropriate when the ARIA live message is the result of the user activating a button or link, but aria-live="polite" is also an option.
