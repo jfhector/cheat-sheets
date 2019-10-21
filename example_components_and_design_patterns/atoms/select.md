@@ -8,6 +8,20 @@ Both WTF Forms' and Scott Ohara's implementations are good on the surface, and w
 
 Scott O'Hara's
 
+## Important considerations
+
+In this bad example, a `<select>` list is used for navigation purposes. The page changes as soon as the user chooses one of the options in the list. Unfortunately, keyboard users on Windows machines may find it difficult to choose the correct option because if they use the down arrow key, the change event will be triggered as soon as the first item is selected, even if that is not the option the user wants.
+
+Note 1: Using alt + down arrow is a workaround for this problem, but not all users are aware of that keyboard combination.
+
+Note 1: Browsers on macOS do not have this problem, because the down arrow key expands the entire list, allowing users to go through the options without selecting them.
+
+### Example
+
+The `<select>` list on this page is coded to jump to the selected page immediately, which causes a problem when using the on Windows browsers: the script activates immediately (and potentially prematurely) when using the down or up arrow keys to try to navigate through the list of items. Using alt + down/up arrow can avoid this problem, but users may not know that they have to use that keyboard combination.
+
+Bad [example](https://dequeuniversity.com/assets/html/module-forms/context/bad/change/history.html).
+
 ## From: 1011WTFF-Checkbox_Radio_Select_Progress
 
 See [example](./../../code_examples/2019Q4/1011WTFF-Checkbox_Radio_Select_Progress/README.md).
