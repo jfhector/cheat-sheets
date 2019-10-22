@@ -11,7 +11,7 @@
 
 ## What does it demonstrate?
 
-### Using CSS variables to keep `z-indez` values in one place
+### Using CSS variables to keep `z-index` values in one place
 
 ```
 html {

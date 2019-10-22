@@ -201,3 +201,6 @@ $tab.addEventListener('keyup', (e) => {
     }
 });
 ```
+
+### `role="tablist"` automatically invokes application mode
+

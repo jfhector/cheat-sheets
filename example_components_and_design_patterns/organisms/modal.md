@@ -22,15 +22,15 @@ My implementation doesn't require authors to manually create a dialog root in th
 
 My implementation has TypeScript typechecking, but not PropTypes.
 
-### Other implementations:
+## Other implementations:
 
-#### Scott O'Hara's
+### Scott O'Hara's
 
-#### a11y-dialog
+### a11y-dialog
 
 https://github.com/edenspiekermann/a11y-dialog
 
-#### Hugo Giraudel's React A11y Dialog
+### Hugo Giraudel's React A11y Dialog
 
 https://github.com/HugoGiraudel/react-a11y-dialog
 
@@ -41,6 +41,34 @@ This implementation requires an existing modal root in the DOM: https://github.c
 Shows how the `alert-dialog` pattern works (note: clicking on the overlay doesn't close the dialog): https://github.com/HugoGiraudel/react-a11y-dialog/blob/master/index.js
 
 In this implementation, the dialog's `h1` and close button are provided by the Dialog instance (rather than by passed to it as children).
+
+## Notes
+
+### `z-index` management for modals
+
+[2019Q4 0905CID_Modal-and-dropdown-positioning-and-z-index](./../../code_examples/2019Q4/0905CID_Modal-and-dropdown-positioning-and-z-index/README.md)
+
+### Using `role='document'` to make text that is not associated with focusable elements available to screen reader users
+
+#### The problem
+
+In a lot of cases we want screen reader users to be able to navigate and read the text inside the dialog. 
+
+But a modal dialog is a container with role="dialog", which is a special kind of application region.
+
+If you put regular text (paragraphs, headings, <div> elements, lists, tables, etc.) in a dialog, screen readers can't access it, because only keyboard-focusable items (and their programmatically-associated labels and descriptions) are accessible in application mode.
+
+#### The solution
+
+Which element exactly should get `role="document"`, given that the containing div would need `role='dialog'`?
+
+Look at how that's done in a good implementation.
+* Note: my React implementation doesn't include this. It should.
+* What about others'?
+
+[Deque's modal implementation](https://dequeuniversity.com/class/custom-widgets2/examples/dialog) uses `role='document'` on a group of elements within the modal (i.e. a subset of the modal's content). I've just tested it with NVDA, and I get inconsistent results. The first time I launched the modal, I couldn't use `DownArrow` to get to the next element. Then, tabbing to an `input` element within the `role='document'` element, then pressing `DownArrow` and `UpArrow`, nothing happened still. Then later, I switched to browse mode, then I could using the arrows to access all elements in the modal, on this occasion, but also on all subsequent occasions, even after refreshing the page.
+
+See also [Deque's Message Dialog example](https://dequeuniversity.com/class/custom-widgets2/examples/dialog-message), which also uses `role='document'`.
 
 ### Using the `Modal` component
 

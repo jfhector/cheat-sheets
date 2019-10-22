@@ -79,3 +79,19 @@ export default NotificationExample;
 ## Other examples
 
 * Heydon Pickering has one in Inclusive Components, chapter that I haven't yet documented.
+
+## Learning notes
+
+### The ARIA live region MUST be recognized by the accessibility API before text can be injected into it.
+
+The best practice is to include an empty live region container in the document on page load. That is the safest way to ensure that the accessibility API registers the container as a live region.
+
+It is possible to add a live region to the DOM later, as long as the region is empty when it is added. **If the region is added to the DOM without a page refresh event, insert a delay with JavaScript before attempting to inject any announcement into it.** You'll need to experiment with the duration of the pause. 
+
+Test on a variety of screen readers and browsers, including mobile devices, before deciding on a minimum delay duration. **Chances are that at least 2 seconds will be required across all combinations, but other factors may come into play.**
+
+Deque WAS course November 2019
+
+### Screen readers do not inform users of alerts that are present on the page before load completes
+
+It is important to note that, at this time, screen readers do not inform users of alerts that are present on the page before page load completes.

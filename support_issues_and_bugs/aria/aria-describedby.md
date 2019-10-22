@@ -1,5 +1,15 @@
 # aria-describedby support and bugs
 
+## High-level support note
+
+Generally speaking, the following conditions must be met to ensure screen readers will read the aria-describedby text:
+
+* The element must have a semantic role. Most screen readers will not read aria-describedby text on <span> or <div> elements.
+* In many cases, the item must be a naturally focusable element (e.g. links, buttons, form elements).
+* The likelihood of the aria-describedby being supported is better in the case of items that typically can have accessible names such as images and tables. Elements like paragraphs, headings, list items, lists, and so on typically are just considered text strings rather than items with accessible names, so most screen readers don't support aria-describedby on them.
+
+Deque WAS course Nov 2019
+
 ## Issue: Not supported on `fieldset` and `legend`
 
 Attaching aria-describedby to `<fieldset>` or `<legend>` is not supported in many screen readers.
@@ -139,3 +149,9 @@ I was just accessible this [example](https://dequeuniversity.com/class/images2/a
 ### To do: test with another screen reader
 
 [Test case](https://dequeuniversity.com/class/images2/alt-text/complex). Note: the `aria-describedby` attribute needs to be added to the image in this example.
+
+## Not issues any more
+
+### In VoiceOver, the delay before reading the description has been removed.
+
+In older versions of VoiceOver on OS X, the default setting was to delay the reading of the aria-describedby text by several seconds, making it highly unlikely that users would ever hear the aria-describedby text, because users would almost always move on past the element before the screen reader read the aria-describedby text. Thankfully, Apple has change the default setting to eliminate this delay. Users may still choose to implement the delay themselves by changing the settings, but that is outside of the developer's control.

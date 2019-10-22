@@ -1,6 +1,12 @@
 # Spinner
 
-## Summary
+## Summary
+
+### Issue in implementation
+
+* The example below, based on TenonUI's spinner, uses the SVG SMIL `animateTransform` element, which is not supported in internet explorer. See [support note on SMIL](./../../support_issues_and_bugs/svg/smil.md).
+
+## My implementation
 
 [My implementation based on TenonUI](./../../code_examples/2019Q4/1015TUI-Spinner/README.md) works well.
 
