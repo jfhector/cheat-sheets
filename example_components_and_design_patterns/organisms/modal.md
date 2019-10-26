@@ -48,6 +48,22 @@ In this implementation, the dialog's `h1` and close button are provided by the D
 
 [2019Q4 0905CID_Modal-and-dropdown-positioning-and-z-index](./../../code_examples/2019Q4/0905CID_Modal-and-dropdown-positioning-and-z-index/README.md)
 
+### Using `aria-describedby` to associate non-focusable text to focusable elements
+
+Faulkner: `role='dialog'` and `role='alertdialog'` causes some screen readers to go into a sort of application mode (implicitly) **once focus moves to a control inside them**. 
+
+Most recommended pattern for modals (Faulkner): for these to work best, set the aria-describedby attribute of the element whose role is dialog to the id of the text that explains the dialog's purpose, and set focus to the first interactive control when you open it:
+
+```html
+<div role="dialog" aria-label="login" aria-describedby="log1">
+<div id="log1" tabindex="-1">Provide user name and password to login.</div>
+...
+...
+</div>
+```
+
+Note that the purpose of `tabindex="-1"` here is to ensure that the `div` is an 'Accessible Element' in IE's books. See [support note on `aria-describedby`](../../support_issues_and_bugs/aria/aria-describedby.md)
+
 ### Using `role='document'` to make text that is not associated with focusable elements available to screen reader users
 
 #### The problem
@@ -60,11 +76,13 @@ If you put regular text (paragraphs, headings, <div> elements, lists, tables, et
 
 #### The solution
 
-Which element exactly should get `role="document"`, given that the containing div would need `role='dialog'`?
+If you have something you want the user to browse, use `role=document` on the outermost element of this document-ish part of the page. It is the counterpart to `role=application` and will allow you to tell the screen reader to use browse mode for this part. 
 
-Look at how that's done in a good implementation.
-* Note: my React implementation doesn't include this. It should.
-* What about others'?
+Also make this element tabbable by setting a `tabindex=0` on it so the user has a chance to reach it.
+
+Source: [Using ARIA](https://www.w3.org/TR/using-aria/#using-application)
+
+##### Example implementations
 
 [Deque's modal implementation](https://dequeuniversity.com/class/custom-widgets2/examples/dialog) uses `role='document'` on a group of elements within the modal (i.e. a subset of the modal's content). I've just tested it with NVDA, and I get inconsistent results. The first time I launched the modal, I couldn't use `DownArrow` to get to the next element. Then, tabbing to an `input` element within the `role='document'` element, then pressing `DownArrow` and `UpArrow`, nothing happened still. Then later, I switched to browse mode, then I could using the arrows to access all elements in the modal, on this occasion, but also on all subsequent occasions, even after refreshing the page.
 

@@ -2,6 +2,22 @@
 
 ## High-level support note
 
+### Steve Faulkner's summary
+
+See [using ARIA document](https://www.w3.org/TR/using-aria/#label-support).
+
+As of October 2018:
+
+* `aria-labelledby` and `aria-describedby` are robustly supported for interactive content elements such as links and form controls including the many input types.
+
+* `aria-label`, `aria-labelledby` and `aria-describedby` work well on table, th and td elements with a few exceptions for NVDA, VoiceOver on iOS, and Talkback discussed in next section.
+
+* `aria-describedby` on a `span` or `div` will be ignored by NVDA and VoiceOver unless given an interactive role, an image or landmark role. JAWS and Talkback are OK.
+
+* `aria-describedby` will be ignored by NVDA and VoiceOver on any other static content. JAWS and Talkback are OK.
+
+### Deque's summary
+
 Generally speaking, the following conditions must be met to ensure screen readers will read the aria-describedby text:
 
 * The element must have a semantic role. Most screen readers will not read aria-describedby text on <span> or <div> elements.
@@ -149,6 +165,26 @@ I was just accessible this [example](https://dequeuniversity.com/class/images2/a
 ### To do: test with another screen reader
 
 [Test case](https://dequeuniversity.com/class/images2/alt-text/complex). Note: the `aria-describedby` attribute needs to be added to the image in this example.
+
+## Issue with IE: In Internet Explorer, if you use `aria-labelledby` with multiple id references or `aria-describedby` with single or multiple id references, the referenced elements must be what Microsoft terms as accessible HTML elements.
+
+In short, an element that won't have any role semantic in the accessibility try (like a `div` or a `span`) is not deemed an 'accessible element' by IE, unless it has a `tabindex` or a ARIA `role`.
+
+See [using ARIA document](https://www.w3.org/TR/using-aria/#label-support).
+
+### E.g.
+
+See [using ARIA document](https://www.w3.org/TR/using-aria/#using-application).
+
+```html
+<div role="dialog" aria-label="login" aria-describedby="log1">
+<div id="log1" tabindex="-1">Provide user name and password to login.</div>
+...
+...
+</div>
+```
+
+`tabindex="-1"` on the `div` is not for programmatically focusing on it (the pattern prescribed is to focus on the first interactive element), but for making that `div` an 'Accessibility Element' as per Internet Explorer.
 
 ## Not issues any more
 
