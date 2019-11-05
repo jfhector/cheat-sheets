@@ -38,6 +38,6 @@ It's better to do this:
 </dl>
 ```
 
-Note that, if I hadn't added `role="definition"`, the `dd`s would have been announced as 'description'. With `role="definition"`, they are announced as 'definition'.
+Note that, if I hadn't added `role="definition"`, the `dd`s would have been announced by macOS VoiceOver as 'description'. With `role="definition"`, macOS VO's announcement is changed to 'definition'. ... which is unexpected as `dd`s have an implicit semantic role of `definition`, as per the ['ARIA in HTML' W3C document](127.0.0.1:8887).
 
 Note also that using `aria-labelledby` on the `dd` improves the user experience of the `dd`: it will announce the `dt` before reading the `dd`.
