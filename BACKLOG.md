@@ -7,4 +7,3 @@
 * 0921HIC-Tooltips_and_toggletips
 * 0920HIC-Tabbed_interfaces_modified_like_APG
 
-
