@@ -388,7 +388,7 @@ export const SpinnerButton: React.FunctionComponent<Props> = ({
 };
 ```
 
-### Building a SpinnerButton
+### Building a SpinnerButton
 
 * The component receives a `isBusy` prop. But this prop doesn't directly, immediately trigger rendering of the Spinner. What does is its `isSpinning` boolean state.
   * 100ms after `isBusy` becomes true, `isSpinning` becomes true. And conversely for false. This is to introduce throttling and avoid having more than 3 flashes per second.

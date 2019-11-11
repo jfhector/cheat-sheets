@@ -379,11 +379,6 @@ html {
   display: block;
 }
 
-/* 
-* 1. If I don't  set `mid-width: 100%, the menu is narrower than the toggle`.
-* I want to size them in relation to each other. But how?
-* Well, it's simple: they have a common parent (.dropdown), and it so happens that the width of the parent is set by the width of the toggle.
-*/
 .menu {
   list-style: none;
   padding-left: 0;

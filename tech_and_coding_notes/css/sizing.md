@@ -1,10 +1,10 @@
-# 0904-Dropdown-in-sass
+# Sizing in CSS
 
-[See it live](https://jfhector.github.io/cheat-sheets/code_examples/2019Q4/0904-Dropdown-in-sass/index.html)
-
-## Notes
+## Using % sizing
 
 ### I can give a dropdown drawer the same width as a dropdown toggle, indirectly, by giving it the same with as the element that wraps both the drawer and the toggle.
+
+See [example](./../../code_examples/2019Q4/0904-Dropdown-in-sass/README.md).
 
 That works because the wrapping element's width is intrinsically set by the width of the toggle.
 
@@ -42,60 +42,6 @@ scss:
 
     .dropdown.is-open > & {
         display: block;
-    }
-}
-```
-
-### Using SCSS modules and BEM
-
-#### Importing all module into a main file
-
-```scss
-@import 'normalize';
-
-html {
-    box-sizing: border-box;
-}
-
-*, ::before, ::after {
-    box-sizing: inherit;
-}
-
-@import 'dropdown';
-@import 'menu';
-```
-
-Note the order of SCSS imports:
-* normalize
-* before project defaults
-* before project modules
-
-Note: I could have put the defaults into a separate 'default' file.
-
-#### SCSS nested syntax
-
-```scss
-.dropdown {
-    display: inline-block;
-    position: relative;
-}
-
-.dropdown__toggle {
-    min-width: 14em;
-    border: 1px solid black;
-    padding: 1em;
-    font-size: 1rem;
-
-    &::after {
-        content: '';
-        display: inline-block;
-        border: 4px solid;
-        border-color: black transparent transparent;
-        margin-left: 1em;
-
-        .dropdown.is-open > & {
-            border-color: transparent transparent black;
-        }
     }
 }
 ```

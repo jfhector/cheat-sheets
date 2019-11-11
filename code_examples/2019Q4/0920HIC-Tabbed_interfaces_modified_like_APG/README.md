@@ -1,6 +1,7 @@
-# MMDDSRC-Name
+# 0920HIC-Tabbed_interfaces_modified_like_APG
 
-[See it live](https://jfhector.github.io/cheat-sheets/code_examples/2019Q4/MMDDSRC-Name/index.html)
+[See it live](https://jfhector.github.io/cheat-sheets/code_examples/2019Q4/0920HIC-Tabbed_interfaces_modified_like_APG/public/index.html)
+
 
 ## Snapshots
 
@@ -27,6 +28,7 @@
 ## Possible improvements
 
 * The ids are not name spaced. They might clash. E.g. `section-1-tab`, `section-1-panel`.
+* Check arrow navigation when VoiceOver is on
 
 ## Notes
 

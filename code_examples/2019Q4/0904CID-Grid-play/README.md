@@ -1,6 +1,6 @@
 # 0904-CID-Grid-play
 
-[See it live](https://jfhector.github.io/cheat-sheets/code_examples/2019Q4/0904-CID-Grid-play/index.html)
+[See it live](https://jfhector.github.io/cheat-sheets/code_examples/2019Q4/0904CID-Grid-play/index.html)
 
 ## Snapshots
 

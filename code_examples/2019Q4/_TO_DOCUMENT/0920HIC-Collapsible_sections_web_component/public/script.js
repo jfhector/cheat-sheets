@@ -106,9 +106,9 @@ if ('content' in document.createElement('template')) {
 
                 this.$lightDomHeading = this.querySelector('h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child');
                 this.$shadowDomHeading = this.shadowRoot.querySelector('h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child');
-                console.log('This looks like a bug in Safari, when using :first-child in a quereSelector on a shadowRoot:');
-                console.log('$lightDomHeading', this.$lightDomHeading);
-                console.log('$shadowDomHeading', this.$shadowDomHeading);
+                // console.log('This looks like a bug in Safari, when using :first-child in a quereSelector on a shadowRoot:');
+                // console.log('$lightDomHeading', this.$lightDomHeading);
+                // console.log('$shadowDomHeading', this.$shadowDomHeading);
                 
                 if (!this.$lightDomHeading) { return console.warn("The first element within each toggle-section must be a heading of an appropriate level.") }
                 this.$shadowDomToggleButton = this.shadowRoot.querySelector('button[aria-expanded]');

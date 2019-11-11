@@ -1,3 +1,12 @@
+# SCSS Syntax
+
+## Examples
+
+### SCSS nested syntax
+
+See [example](./../../../code_examples/2019Q4/0904-Dropdown-in-sass/README.md).
+
+```scss
 .dropdown {
     display: inline-block;
     position: relative;
@@ -21,15 +30,4 @@
         }
     }
 }
-
-.dropdown__drawer {
-    display: none;
-    position: absolute;
-    top: 3.5em;
-    left: 0;
-    min-width: 100%; /* 1. */
-
-    .dropdown.is-open > & {
-        display: block;
-    }
-}
+```
