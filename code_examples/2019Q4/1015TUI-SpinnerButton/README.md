@@ -219,7 +219,7 @@ export const SpinnerButton: React.FunctionComponent<Props> = ({
 };
 ```
 
-### Cancelling scheduled timeouts, inc on cleanup
+### Cancelling scheduled timeouts, including on cleanup
 
 If I'm using `setTimeout` to schedule an action, the schedule should be cancelled if it becomes irrelevant, and also when the component dismounts.
 
@@ -282,7 +282,7 @@ If I'm using `setTimeout` to schedule an action, the schedule should be cancelle
   ]);
 ```
 
-### Updating a live region, without leaving a residue message in the DOM
+### Updating a live region, without leaving a residue message in the DOM
 
 Considerations:
 * To update a live region, it's better (for support, I believe) to first remove its content before adding new one.
@@ -531,7 +531,7 @@ export const SpinnerButton: React.FunctionComponent<Props> = ({
 };
 ```
 
-#### Styling it
+#### Styling it
 
 ```css
 .SpinnerButton {
