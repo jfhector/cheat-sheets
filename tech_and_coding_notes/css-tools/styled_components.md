@@ -6,7 +6,7 @@
 
 See this [thread](https://stackoverflow.com/questions/52226596/styled-components-defaultprops).
 
-## Media queries
+## Media queries
 
 ```js
 import { css } from 'styled-components'
